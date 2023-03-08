@@ -5,6 +5,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    background-color: #6E89A1;
 }
 
 
@@ -20,6 +21,7 @@
     height: 100%;
     display: block;
     margin: 0 auto;
+    background-color: #2D5E68;
 }
 
 .logo_container {
@@ -36,10 +38,12 @@
     font-family: "Open Sans";
     font-size: 32px;
     font-weight: 200;
+    background-color: #2D5E68;
 }
 
 .logo_container h1 span {
     font-weight: 800;
+    background-color: #2D5E68;
 }
 
 .navigation {
@@ -53,6 +57,7 @@
     display: table;
     float: left;
     padding: 0px 20px;
+    background-color: #2D5E68;
 }
 
 .navigation a:last-child {
@@ -66,5 +71,6 @@
     color: white;
     font-family: "Open Sans";
     font-size: 16px;
+    background-color: #2D5E68;
 }
 

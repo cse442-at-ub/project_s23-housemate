@@ -1,0 +1,91 @@
+/*headings, titles, and body css*/
+body{
+	background-color: #6D89A1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+	margin-left: .5em;
+	font-size: 18pt;
+	text-align: center;
+}
+
+.whitebox{
+    height: 300px;
+    width: 300px;
+    position: left;
+    background-color: #fff;
+    border:black;
+    margin: auto;
+    padding: 30px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+
+}
+
+.bluebox{
+    height: 300px;
+    width: 300px;
+    position: left;
+    background-color: #023A46;
+    border:black;
+    margin: auto;
+    padding: 30px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+
+}
+
+form{
+    margin-top: 10px;
+}
+
+.blueboxbutton{
+    background-color: white;
+    height:50px;
+    width:150px;
+}
+
+#regform{
+    color:black;
+}
+
+
+
+
+/*nav-bar css*/
+.mini-navbar {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 10;
+    overflow: hidden;
+    background-color: #2D5D68;
+
+}
+
+.blue-navbar {
+    display: block;
+    padding: 0px;
+    height: 20px;
+    margin-bottom: 30px;
+    background-color: #023A46;
+
+}
+
+/*Links css*/
+a{
+	color: black;
+}
+a:hover{
+	color: blue;
+}
+
+h2{
+	font-size: 14pt;
+	text-align: center;
+	color:black;
+}

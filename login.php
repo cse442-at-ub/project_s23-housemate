@@ -6,10 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["Password:"];
 
   // Step 1: Connect to the database
-  $db_servername = "oceanus.cse.buffalo.edu:3306";
+  $db_servername = "cse442_2023_spring_team_n_db";
   $db_username = "rsdevara";
   $db_password = "50304342";
-  $db_name = "housemateUsers";
+  $db_name = "users";
 
   $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 

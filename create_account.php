@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Step 1: Connect to the database
-  $db_servername = "localhost";
-  $db_username = "your_username";
-  $db_password = "your_password";
-  $db_name = "your_database";
+  $db_servername = "oceanus.cse.buffalo.edu:3306";
+  $db_username = "rsdevara";
+  $db_password = "50304342";
+  $db_name = "housemateUsers";
 
   $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 
@@ -25,14 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  // Step 2: Prepare the SQL statement
   $sql = "INSERT INTO users (email, username, password) VALUES (?, ?, ?)";
 
-  // Step 3: Bind the parameters
   $stmt = mysqli_prepare($conn, $sql);
   mysqli_stmt_bind_param($stmt, "sss", $email, $username, $password);
 
-  // Step 4: Execute the SQL statement
   if (mysqli_stmt_execute($stmt)) {
     // Account created successfully, redirect to the account_created.html page
     header("Location: account_created.html");

@@ -1,9 +1,10 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email = $_POST["email"];
-  $username = $_POST["username"];
-  $password = crypt($_POST["password"], PASSWORD_DEFAULT); // Hash the password for security
-  $confirm_password = $_POST["confirm_password"];
+  $email = $_POST["Email:"];
+  $username = $_POST["Username:"];
+  $password = crypt($_POST["Password:"], PASSWORD_DEFAULT); // Hash the password for security
+  $confirm_password = $_POST["Confirm password:"];
 
   if (empty($email) || empty($username) || empty($password) || empty($confirm_password)) {
     echo "Please fill in all fields.";

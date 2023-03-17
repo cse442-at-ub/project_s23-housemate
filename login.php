@@ -2,8 +2,8 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email_username = $_POST["Email"];
-  $password = $_POST["Password"];
+  $email_username = $_POST["Email:"];
+  $password = $_POST["Password:"];
 
   // Step 1: Connect to the database
   $db_servername = "oceanus.cse.buffalo.edu:3306";

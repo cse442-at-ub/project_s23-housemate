@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email_username = $_POST["Email:"];
+  $email_username = $_POST["Username:"];
   $password = $_POST["Password:"];
 
   // Step 1: Connect to the database
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     // Step 4: Display an error message
     echo "Invalid email/username or password.";
+    header("Location: login_logout.html");
   }
 
   mysqli_stmt_close($stmt);

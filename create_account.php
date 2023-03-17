@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Step 1: Connect to the database
-  $db_servername = "ocse442_2023_spring_team_n_db";
+  $db_servername = "oceanus.cse.buffalo.edu:3306 ";
   $db_username = "rsdevara";
   $db_password = "50304342";
-  $db_name = "users";
+  $db_name = "ocse442_2023_spring_team_n_db";
 
   $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 

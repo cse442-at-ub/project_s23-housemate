@@ -17,12 +17,12 @@
 
 		<div class="whitebox">
 			<div><!--div for 5a -->
-				<form id="regForm">
+				<form id="regForm" action="login.php" method="post">
 					Email:<br> 
-					<input type="text"><br>
+					<input type="text" name="email"><br>
 					Password:<br>
-					<input type="text"><br>
-					<a href="index.html">Login</a>
+					<input type="text" name="pwd"><br>
+					<button type="submit" name="submit">Log In</button>
 				</form>
 				<a href="create_account.html"> Don't have an account? </a>
 			</div>

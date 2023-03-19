@@ -88,7 +88,7 @@ function createUser($conn, $email, $username, $pwd) {
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: create_account.html?error=none");
+    header("location: account_created.php?error=none");
     exit();
 }
 
@@ -123,7 +123,7 @@ function loginUSer($conn, $email, $pwd) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
-        header("location: index.html");
+        header("location: index.php");
         exit();
     }
 }

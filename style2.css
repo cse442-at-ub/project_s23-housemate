@@ -3,57 +3,11 @@ body{
 	background-color: #6D89A1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-	margin-left: .5em;
+	margin: 0;
 	font-size: 18pt;
 	text-align: center;
 }
 
-.whitebox{
-    height: 300px;
-    width: 300px;
-    position: left;
-    background-color: #fff;
-    border:black;
-    margin: auto;
-    padding: 30px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12pt;
-
-}
-
-.bluebox{
-    height: 300px;
-    width: 300px;
-    position: left;
-    background-color: #023A46;
-    border:black;
-    margin: auto;
-    padding: 30px;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12pt;
-
-}
-
-form{
-    margin-top: 10px;
-}
-
-.blueboxbutton{
-    background-color: white;
-    height:50px;
-    width:150px;
-}
-
-#regform{
-    color:black;
-}
-
-
-
-
-/*nav-bar css*/
 .mini-navbar {
     display: block;
     color: #fff;
@@ -61,10 +15,9 @@ form{
     padding: 10px;
     text-decoration: none;
     list-style-type: none;
-    margin: 10;
+    margin: 0;
     overflow: hidden;
     background-color: #2D5D68;
-
 }
 
 .blue-navbar {
@@ -73,7 +26,50 @@ form{
     height: 20px;
     margin-bottom: 30px;
     background-color: #023A46;
+}
 
+.whitebox{
+    height: 375px;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 30px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button[type='submit'] {
+    background-color: #023A46;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16pt;
+    cursor: pointer;
+}
+
+button[type='submit']:hover {
+    background-color: #2D5D68;
 }
 
 /*Links css*/

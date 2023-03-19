@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <link rel="stylesheet" href="style. css" />
@@ -19,9 +22,9 @@
 			<div><!--div for 5a -->
 				<form id="regForm" action="login.php" method="post">
 					Email:<br> 
-					<input type="text" name="email"><br>
+					<input type="email" name="email"><br>
 					Password:<br>
-					<input type="text" name="pwd"><br>
+					<input type="password" name="pwd"><br>
 					<button type="submit" name="submit">Log In</button>
 				</form>
 				<a href="create_account.html"> Don't have an account? </a>

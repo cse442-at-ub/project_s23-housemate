@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,7 +85,12 @@
               </div>
               <div class="c-controls">
                 <a  class="delete"><img src="images/icon-delete.svg" alt="" class="control-icon">Delete</a>
-                <a  class="reply"><img src="images/icon-reply.svg" alt="" class="control-icon">Reply</a>
+                
+                <?php
+                  if (isset($_SESSION["useruid"])) {
+                    echo "<a  class=\"reply\"><img src=\"images/icon-reply.svg\" alt=\"\" class=\"control-icon\">Reply</a>";
+                  }
+                ?>
               </div>
               <div class="c-user">
                 <img src="images/avatars/image-maxblagun.webp" alt="" class="usr-img">
@@ -98,17 +107,18 @@
           </div>
         </template>
 
-        
-        <div class="comment-section">
-      
-          <div class="comments-wrp">
-      
-          </div> <!--commentS wrapper-->
-        <div class="reply-input container">
-            <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
-            <button class="bu-primary">SEND</button>
-          </div> <!--reply input-->
-        </div> <!--comment sectio-->
+        <?php
+            if (isset($_SESSION["useruid"])) {
+              echo "<div class=\"comment-section\">
+                      <div class=\"comments-wrp\">
+                      </div> <!--commentS wrapper-->
+                      <div class=\"reply-input container\">
+                        <textarea class=\"cmnt-input\" placeholder=\"Add a comment...\"></textarea>
+                        <button class=\"bu-primary\">SEND</button>
+                       </div> <!--reply input-->
+                    </div> <!--comment sectio-->";
+            }
+          ?>
         
         <div class="modal-wrp invisible">
           <div class="modal container">
@@ -121,6 +131,36 @@
 
     </main>
     <script>
+
+var slidePosition = 1;
+      SlideShow(slidePosition);
+
+      // forward/Back controls
+      function plusSlides(n) {
+        SlideShow(slidePosition += n);
+      }
+
+      //  images controls
+      function currentSlide(n) {
+        SlideShow(slidePosition = n);
+      }
+
+      function SlideShow(n) {
+        var i;
+        var slides = document.getElementsByClassName("Containers");
+        var circles = document.getElementsByClassName("dots");
+        if (n > slides.length) {slidePosition = 1}
+        if (n < 1) {slidePosition = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < circles.length; i++) {
+            circles[i].className = circles[i].className.replace(" enable", "");
+        }
+        slides[slidePosition-1].style.display = "block";
+        circles[slidePosition-1].className += " enable";
+      } 
+
       const data = {
         currentUser: {
           image: {
@@ -291,35 +331,6 @@
         addComment(commentBody, 0);
         cmntInput.querySelector(".cmnt-input").value = "";
       });
-    
-      var slidePosition = 1;
-      SlideShow(slidePosition);
-
-      // forward/Back controls
-      function plusSlides(n) {
-        SlideShow(slidePosition += n);
-      }
-
-      //  images controls
-      function currentSlide(n) {
-        SlideShow(slidePosition = n);
-      }
-
-      function SlideShow(n) {
-        var i;
-        var slides = document.getElementsByClassName("Containers");
-        var circles = document.getElementsByClassName("dots");
-        if (n > slides.length) {slidePosition = 1}
-        if (n < 1) {slidePosition = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < circles.length; i++) {
-            circles[i].className = circles[i].className.replace(" enable", "");
-        }
-        slides[slidePosition-1].style.display = "block";
-        circles[slidePosition-1].className += " enable";
-      } 
 
     </script>
   </body>

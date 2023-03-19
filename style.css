@@ -120,5 +120,19 @@ nav {
     text-align: left;
 }
 
+/* Tablet and larger devices */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
 
+    .grey-box {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .image-box {
+        margin-left: 0;
+    }
+}
 

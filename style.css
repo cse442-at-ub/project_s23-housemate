@@ -25,10 +25,10 @@ nav {
 	margin: 0;
 }
 
-.navbar-right {
+.navbar-right a{
 	font-size: 0px;
 	margin: 0;
-	color: black
+	color: white
 }
 
 .container {

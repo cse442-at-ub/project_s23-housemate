@@ -41,7 +41,7 @@
     background-color: black;
 }
 
-.logo_container h1 {
+.logo_container a {
     color: white;
     height: 100%;
     display: table-cell;
@@ -52,7 +52,7 @@
     background-color: black;
 }
 
-.logo_container h1 span {
+.logo_container a span {
     font-weight: 800;
     background-color: black;
 }

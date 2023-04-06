@@ -104,7 +104,7 @@ function emptyInputLogin($email, $pwd) {
     return $result;
 }
 
-function loginUSer($conn, $email, $pwd) {
+function loginUser($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 
     if ($uidExists === false) {

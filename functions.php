@@ -109,20 +109,20 @@ function updatePassword($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
-function updatePicture($conn, $email, $username, $image) {
-    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? AND usersUid = ?";
+function updatePicture($conn, $email, $username, $image, $pwd) {
+    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? AND usersUid = ? AND usersPwd = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: create_account.html?=stmtfailed");
+        header("location: profile_pic.html");
         exit();
     }
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-
-    mysqli_stmt_bind_param($stmt, "sss", $image, $email, $username);
+    mysqli_stmt_bind_param($stmt, "sss", $image, $email, $username, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: account_created.php?error=none");
+    header("location: profile.html");
     exit();
 }
 function emptyInputLogin($email, $pwd) {

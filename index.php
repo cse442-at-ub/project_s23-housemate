@@ -17,9 +17,20 @@
 			<div class="navbar-center">
 				<h1>Housemate</h1>
 			</div>
-      		<div class="navbar-right">
-				<a href="create_account.html">Login</a>
-			</div>
+
+			<?php
+				if (isset($_SESSION["useruid"])) {
+					echo "<div class=\"navbar-right\">";
+					echo "<a>Welcome " . $_SESSION["useruid"] . "!</a>";
+					echo "<a href=\"logout.php\">Logout</a>";
+					echo "</div>";
+				}
+				else {
+					echo "<div class=\"navbar-right\">";
+					echo "<a href=\"login_logout.html\">Login</a>";
+					echo "</div>";
+				}
+			?>
 		</nav>
 	</header>
 	<main>

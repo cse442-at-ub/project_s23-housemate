@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+  date_default_timezone_set('America/New_York');
+  include 'dbh.php';
+  include 'comments.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -62,66 +67,18 @@
           <span class="dots" onclick="currentSlide(3)"></span>
         </div>
 
-        <template class="reply-input-template">
-          <div class="reply-input container">
-            <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
-            <button class="bu-primary">SEND</button>
-          </div>
-        </template>
-      
-        <template class="comment-template">
-          <div class="comment-wrp">
-            <div class="comment container">
-              <div class="c-score">
-                <img src="images/icon-plus.svg" alt="plus" class="score-control score-plus">
-                <p class="score-number">5</p>
-                <img src="images/icon-minus.svg" alt="minus" class="score-control score-minus">
-              </div>
-              <div class="c-controls">
-                <a  class="delete"><img src="images/icon-delete.svg" alt="" class="control-icon">Delete</a>
-                
-                <?php
-                  if (isset($_SESSION["useruid"])) {
-                    echo "<a  class=\"reply\"><img src=\"images/icon-reply.svg\" alt=\"\" class=\"control-icon\">Reply</a>";
-                  }
-                ?>
-              </div>
-              <div class="c-user">
-                <img src="images/avatars/image-maxblagun.webp" alt="" class="usr-img">
-                <p class="usr-name">Test</p>
-                <p class="cmnt-at">2 weeks ago</p>    
-              </div>
-              <p class="c-text">
-                <span class="reply-to"></span>
-                <span class="c-body"></span>
-              </p>
-            </div><!--comment-->
-            <div class="replies comments-wrp">
-            </div><!--replies-->
-          </div>
-        </template>
-
-        <?php
-            if (isset($_SESSION["useruid"])) {
-              echo "<div class=\"comment-section\">
-                      <div class=\"comments-wrp\">
-                      </div> <!--commentS wrapper-->
-                      <div class=\"reply-input container\">
-                        <textarea class=\"cmnt-input\" placeholder=\"Add a comment...\"></textarea>
-                        <button class=\"bu-primary\">SEND</button>
-                       </div> <!--reply input-->
-                    </div> <!--comment sectio-->";
-            }
-          ?>
         
-        <div class="modal-wrp invisible">
-          <div class="modal container">
-            <h3>Delete comment</h3>
-            <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
-            <button class="yes">YES,DELETE</button>
-            <button class="no">NO,CANCEL</button>
-          </div>
-        </div>
+        <?php
+        echo "<form method='POST' action'".setComments($conn)."'>
+                <input type='hidden' name='uid' value='".$_SESSION["useruid"]."'>
+                <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                <textarea name='message'></textarea><br>
+                <button type='submit' name='commentSubmit'>Comment</button>
+              </form>";
+        
+        getComments($conn);
+        
+        ?>
 
     </main>
     <script>
@@ -154,177 +111,6 @@ var slidePosition = 1;
         slides[slidePosition-1].style.display = "block";
         circles[slidePosition-1].className += " enable";
       } 
-
-      const data = {
-        currentUser: {
-          image: {
-            png: "./images/avatars/Yuanjie.png",
-            webp: "./images/avatars/Yuanjie.webp",
-          },
-          username: "Yuanjie",
-        },
-        comments: [
-          {
-            parent: 0,
-            id: 1,
-            content:
-              "It is very close to campus!",
-            createdAt: "1 month ago",
-            score: 12,
-            user: {
-              image: {
-                png: "./images/avatars/Aryaman.png",
-                webp: "./images/avatars/Aryaman.webp",
-              },
-              username: "Aryaman",
-            },
-            replies: [],
-          },
-        ],
-      };
-      function appendFrag(frag, parent) {
-        var children = [].slice.call(frag.childNodes, 0);
-        parent.appendChild(frag);
-        //console.log(children);
-        return children[1];
-      }
-    
-      const addComment = (body, parentId, replyTo = undefined) => {
-        let commentParent =
-          parentId === 0
-            ? data.comments
-            : data.comments.filter((c) => c.id == parentId)[0].replies;
-        let newComment = {
-          parent: parentId,
-          id:
-            commentParent.length == 0
-              ? 1
-              : commentParent[commentParent.length - 1].id + 1,
-          content: body,
-          createdAt: "Now",
-          replyingTo: replyTo,
-          score: 0,
-          replies: parent == 0 ? [] : undefined,
-          user: data.currentUser,
-        };
-        commentParent.push(newComment);
-        initComments();
-      };
-      const deleteComment = (commentObject) => {
-        if (commentObject.parent == 0) {
-          data.comments = data.comments.filter((e) => e != commentObject);
-        } else {
-          data.comments.filter((e) => e.id === commentObject.parent)[0].replies =
-            data.comments
-              .filter((e) => e.id === commentObject.parent)[0]
-              .replies.filter((e) => e != commentObject);
-        }
-        initComments();
-      };
-    
-      const promptDel = (commentObject) => {
-        const modalWrp = document.querySelector(".modal-wrp");
-        modalWrp.classList.remove("invisible");
-        modalWrp.querySelector(".yes").addEventListener("click", () => {
-          deleteComment(commentObject);
-          modalWrp.classList.add("invisible");
-        });
-        modalWrp.querySelector(".no").addEventListener("click", () => {
-          modalWrp.classList.add("invisible");
-        });
-      };
-    
-      const spawnReplyInput = (parent, parentId, replyTo = undefined) => {
-        if (parent.querySelectorAll(".reply-input")) {
-          parent.querySelectorAll(".reply-input").forEach((e) => {
-            e.remove();
-          });
-        }
-        const inputTemplate = document.querySelector(".reply-input-template");
-        const inputNode = inputTemplate.content.cloneNode(true);
-        const addedInput = appendFrag(inputNode, parent);
-        addedInput.querySelector(".bu-primary").addEventListener("click", () => {
-          let commentBody = addedInput.querySelector(".cmnt-input").value;
-          if (commentBody.length == 0) return;
-          addComment(commentBody, parentId, replyTo);
-        });
-      };
-    
-      const createCommentNode = (commentObject) => {
-        const commentTemplate = document.querySelector(".comment-template");
-        var commentNode = commentTemplate.content.cloneNode(true);
-        commentNode.querySelector(".usr-name").textContent =
-          commentObject.user.username;
-        commentNode.querySelector(".usr-img").src = commentObject.user.image.webp;
-        commentNode.querySelector(".score-number").textContent = commentObject.score;
-        commentNode.querySelector(".cmnt-at").textContent = commentObject.createdAt;
-        commentNode.querySelector(".c-body").textContent = commentObject.content;
-        if (commentObject.replyingTo)
-          commentNode.querySelector(".reply-to").textContent =
-            "@" + commentObject.replyingTo;
-      
-        commentNode.querySelector(".score-plus").addEventListener("click", () => {
-          commentObject.score++;
-          initComments();
-        });
-      
-        commentNode.querySelector(".score-minus").addEventListener("click", () => {
-          commentObject.score--;
-          if (commentObject.score < 0) commentObject.score = 0;
-          initComments();
-        });
-        if (commentObject.user.username == data.currentUser.username) {
-          commentNode.querySelector(".comment").classList.add("this-user");
-          commentNode.querySelector(".delete").addEventListener("click", () => {
-            promptDel(commentObject);
-          });
-          return commentNode;
-        }
-        return commentNode;
-      };
-    
-      const appendComment = (parentNode, commentNode, parentId) => {
-        const bu_reply = commentNode.querySelector(".reply");
-        // parentNode.appendChild(commentNode);
-        const appendedCmnt = appendFrag(commentNode, parentNode);
-        const replyTo = appendedCmnt.querySelector(".usr-name").textContent;
-        bu_reply.addEventListener("click", () => {
-          if (parentNode.classList.contains("replies")) {
-            spawnReplyInput(parentNode, parentId, replyTo);
-          } else {
-            //console.log(appendedCmnt.querySelector(".replies"));
-            spawnReplyInput(
-              appendedCmnt.querySelector(".replies"),
-              parentId,
-              replyTo
-            );
-          }
-        });
-      };
-    
-      function initComments(
-        commentList = data.comments,
-        parent = document.querySelector(".comments-wrp")
-      ) {
-        parent.innerHTML = "";
-        commentList.forEach((element) => {
-          var parentId = element.parent == 0 ? element.id : element.parent;
-          const comment_node = createCommentNode(element);
-          if (element.replies && element.replies.length > 0) {
-            initComments(element.replies, comment_node.querySelector(".replies"));
-          }
-          appendComment(parent, comment_node, parentId);
-        });
-      }
-      
-      initComments();
-      const cmntInput = document.querySelector(".reply-input");
-      cmntInput.querySelector(".bu-primary").addEventListener("click", () => {
-        let commentBody = cmntInput.querySelector(".cmnt-input").value;
-        if (commentBody.length == 0) return;
-        addComment(commentBody, 0);
-        cmntInput.querySelector(".cmnt-input").value = "";
-      });
 
     </script>
   </body>

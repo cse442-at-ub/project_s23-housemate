@@ -22,6 +22,7 @@
 				if (isset($_SESSION["useruid"])) {
 					echo "<div class=\"navbar-right\">";
 					echo "<a>Welcome " . $_SESSION["useruid"] . "!</a>";
+					echo "<a href=\"profile.php\">Profile</a>";
 					echo "<a href=\"logout.php\">Logout</a>";
 					echo "</div>";
 				}

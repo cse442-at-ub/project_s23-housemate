@@ -128,6 +128,21 @@ function loginUser($conn, $email, $pwd) {
     }
 }
 
+function deleteAccount($conn) {
+    if (isset($_POST['accountDelete'])) {
+        $userid = $_POST['userid'];
+
+        $sql = "DELETE FROM users WHERE usersId='$userid'";
+        $result = $conn->query($sql);
+
+        session_start();
+        session_unset();
+        session_destroy();
+
+        header("location: index.php");
+        exit();
+    }
+}
 
 
 ?>

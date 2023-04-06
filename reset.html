@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <link rel="stylesheet" href="style. css" />
@@ -5,7 +8,7 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="style2.css"/>
-	<title>Profile Picture Upload</title>
+	<title>Reset Password</title>
 </head>
 	<body>
 
@@ -17,15 +20,12 @@
 
 		<div class="whitebox">
 			<div><!--div for 5a -->
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select a jpeg image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
-                  </form>
+				<form id="regForm" action="sendEmail.php" method="post">
+					Email:<br> 
+					<input type="email" name="email"><br>
+					<button type="submit" name="submit">Send the reset email</button>
+				</form>
 			</div>
 		</div>
-
-		<a href="desktop.html">Homepage</a>
-
 	</body>
 </html>

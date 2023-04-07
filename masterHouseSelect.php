@@ -27,9 +27,23 @@
             <div class="logo_container">
               <a href="index.php">House<span>mate</span></a>
             </div>
-          </div>
-        </div>
 
+
+            <?php
+            if (isset($_SESSION["useruid"])) {
+              echo "<ul class=\"navigation\">";
+              echo "<a><li>Welcome " . $_SESSION["useruid"] . "!</li></a>";
+              echo "<a href=\"profile.php\"><li>Profile</li></a>";
+              echo "<a href=\"logout.php\"><li>Logout</li></a>";
+              echo "</ul>";
+            }
+            else {
+              echo "<ul class=\"navigation\">";
+              echo "<a href=\"login_logout.html\"><li>Login</li></a>";
+              echo "</ul>";
+            }
+			    ?>
+        </div>
         
         
         <?php

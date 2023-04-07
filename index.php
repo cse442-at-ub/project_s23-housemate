@@ -19,6 +19,7 @@
 			</div>
       		<div class="navbar-right">
 				<a href="create_account.html">Login</a>
+				<a href="profile.html">Profile</a>
 			</div>
 		</nav>
 	</header>

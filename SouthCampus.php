@@ -93,9 +93,9 @@
 
                 <?php 
                 
-                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear">Goodyear</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement">Clement</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis">Axis</a></li>';
+                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear Hall">Goodyear Hall</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement Hall">Clement Hall</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis 360">Axis 360</a></li>';
 
                 ?>
               </ul>

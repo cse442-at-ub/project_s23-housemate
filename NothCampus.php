@@ -88,10 +88,10 @@
               <ul class="dropdown-menu">
                 <?php 
                 
-                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Governers">Governers</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Greiner">Greiner</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Ellicott Complex">Ellicott</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Hadley">Hadley</a></li>';
+                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Governers Complex">Governers Complex</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Greiner Hall">Greiner Hall</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Ellicott Complex">Ellicott Complex</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Hadley Apartments">Hadley Apartments</a></li>';
 
                 ?>
               </ul>

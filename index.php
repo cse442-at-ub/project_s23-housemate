@@ -43,8 +43,8 @@
 				<div class="dropdown">
 					<button class="dropbtn">Select your University</button>
 					<div class="dropdown-content">
-						<a href="NothCampus.html">  University At Buffalo- North Campus  </a>
-            			<a href="SouthCampus.html">  University At Buffalo- South Campus  </a>
+						<a href="NothCampus.php">  University At Buffalo- North Campus  </a>
+            			<a href="SouthCampus.php">  University At Buffalo- South Campus  </a>
 					</div>
 				</div>
 			</div>

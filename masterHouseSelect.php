@@ -3,6 +3,7 @@
 
   date_default_timezone_set('America/New_York');
   include 'dbh.php';
+  include 'getHousing.php';
   include 'comments.php';
 
 ?>
@@ -29,52 +30,22 @@
           </div>
         </div>
 
-        <div class="housing_title">
-          <h1>Ellicott Complex</h1>
-          <a href="https://www.buffalo.edu/campusliving/find-your-home/where-can-i-live/residence-halls/ellicott-complex.html">Learn more</a>
-        </div>
         
-
-        <!-- Slideshow container -->
-        <div class="slideshow-container fade">
-
-          <!-- Full images with numbers and message Info -->
-          <div class="Containers">
-            <div class="MessageInfo">1 / 3</div>
-            <img src="ellicott1.jpg" style="width:100%">
-          </div>
-
-          <div class="Containers">
-            <div class="MessageInfo">2 / 3</div>
-            <img src="ellicott2.jpg" style="width:100%">
-          </div>
-
-          <div class="Containers">
-            <div class="MessageInfo">3 / 3</div>
-            <img src="ellicott3.jpg" style="width:100%">
-          </div>
-
-          <!-- Back and forward buttons -->
-          <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="forward" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The circles/dots -->
-        <div style="text-align:center">
-          <span class="dots" onclick="currentSlide(1)"></span>
-          <span class="dots" onclick="currentSlide(2)"></span>
-          <span class="dots" onclick="currentSlide(3)"></span>
-        </div>
-
         
         <?php
-        echo "<form method='POST' action'".setComments($conn)."'>
+
+        $housingName = $_GET['housingName'];
+
+        getHousing($conn, $housingName);
+
+        if (isset($_SESSION['useruid'])) {
+          echo "<form method='POST' action'".setComments($conn)."'>
                 <input type='hidden' name='uid' value='".$_SESSION["useruid"]."'>
                 <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                 <textarea name='message'></textarea><br>
                 <button type='submit' name='commentSubmit'>Comment</button>
               </form>";
+        }
         
         getComments($conn);
         

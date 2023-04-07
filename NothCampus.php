@@ -10,10 +10,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
-    
-
-    
-
 <link href="bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -90,10 +86,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Governers.html">Governers</a></li>
-                <li><a class="dropdown-item" href="Greiner.html">Greiner</a></li>
-                <li><a class="dropdown-item" href="Ellicott.php">Ellicott</a></li>
-                <li><a class="dropdown-item" href="Hadley.html">Hadley</a></li>
+                <?php 
+                
+                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Governers">Governers</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Greiner">Greiner</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Ellicott Complex">Ellicott</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Hadley">Hadley</a></li>';
+
+                ?>
               </ul>
             </li>
             <!--

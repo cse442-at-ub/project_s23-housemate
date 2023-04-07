@@ -90,9 +90,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Goodyear.html">Goodyear</a></li>
-                <li><a class="dropdown-item" href="Clement.html">Clement</a></li>
-                <li><a class="dropdown-item" href="Axis.html">Axis</a></li>
+
+                <?php 
+                
+                echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear">Goodyear</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement">Clement</a></li>
+                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis">Axis</a></li>';
+
+                ?>
               </ul>
             </li>
             <!--

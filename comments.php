@@ -26,8 +26,8 @@ function getComments($conn) {
                 echo $row['message'];
                 echo "</p>";
             if (isset($_SESSION['useruid'])) {
-                if ($_SESSION['useruid'] == $row['uid'])
-                echo "<form class='delete-form' method='POST' action='".deleteComments($conn)."'>
+                if ($_SESSION['useruid'] == $row['uid']) {
+                    echo "<form class='delete-form' method='POST' action='".deleteComments($conn)."'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>
                         <button type='submit' name='commentDelete'>Delete</button>
                     </form>
@@ -39,6 +39,7 @@ function getComments($conn) {
                         <input type='hidden' name='message' value='".$row['message']."'>
                         <button>Edit</button>
                     </form>";
+                }
             }
             echo "</div>";
         } 

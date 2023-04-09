@@ -108,7 +108,7 @@ function loginUser($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 
     if ($uidExists === false) {
-        header("location: login_logout?error=wronglogin");
+        header("location: login_logout.html?error=wronglogin");
         exit();
     }
 
@@ -116,7 +116,7 @@ function loginUser($conn, $email, $pwd) {
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: login_logout?error=wronglogin");
+        header("location: login_logout.html?error=wronglogin");
         exit();
     }
     else if ($checkPwd === true) {

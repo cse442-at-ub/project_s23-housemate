@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 function setComments($conn) {
     if (isset($_POST['commentSubmit'])) {
         $uid = $_POST['uid'];

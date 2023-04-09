@@ -5,11 +5,6 @@ $dbUserName = "yuanjiex";
 $dbPassword = "50364454";
 $dbName = "cse442_2023_spring_team_n_db";
 
-//$serverName = "localhost";
-//$dbUserName = "root";
-//$dbPassword = "";
-//$dbName = "442local";
-
 $conn = mysqli_connect($serverName, $dbUserName, $dbPassword, $dbName);
 
 if (!$conn) {

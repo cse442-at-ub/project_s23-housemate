@@ -48,27 +48,19 @@
         
         <?php
 
-<<<<<<< HEAD:masterHouseSelect.php
-        $housingName = $_GET['housingName'];
+        $_SESSION['housingName'] = $_GET['housingName'];
+        getHousing($conn, $_SESSION['housingName']);
 
-        getHousing($conn, $housingName);
-
-=======
->>>>>>> b2d4dc4153bcf2e7336b2af78c5248b604e61eae:Ellicott.php
         if (isset($_SESSION['useruid'])) {
-          echo "<form method='POST' action'".setComments($conn)."'>
+          echo "<form method='POST' action'".setComments($conn, $_SESSION['housingName'])."'>
                 <input type='hidden' name='uid' value='".$_SESSION["useruid"]."'>
                 <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                 <textarea name='message'></textarea><br>
                 <button type='submit' name='commentSubmit'>Comment</button>
               </form>";
         }
-<<<<<<< HEAD:masterHouseSelect.php
-=======
         
->>>>>>> b2d4dc4153bcf2e7336b2af78c5248b604e61eae:Ellicott.php
-        
-        getComments($conn);
+        getComments($conn, $_SESSION['housingName']);
         
         ?>
 

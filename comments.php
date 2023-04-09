@@ -1,6 +1,6 @@
 <?php
 
-function setComments($conn) {
+function setComments($conn, $housingName) {
     if (isset($_POST['commentSubmit'])) {
         $uid = $_POST['uid'];
         $date = $_POST['date'];
@@ -9,12 +9,12 @@ function setComments($conn) {
         $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
         $result = $conn->query($sql);
 
-        header("location: Ellicott.php");
+        echo '<script language="javascript">window.location.href ="masterHouseSelect.php?housingName='.$housingName.'"</script>';
 
     }
 }
 
-function getComments($conn) {
+function getComments($conn, $housingName) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
 
@@ -27,7 +27,7 @@ function getComments($conn) {
                 echo "</p>";
             if (isset($_SESSION['useruid'])) {
                 if ($_SESSION['useruid'] == $row['uid']) {
-                    echo "<form class='delete-form' method='POST' action='".deleteComments($conn)."'>
+                    echo "<form class='delete-form' method='POST' action='".deleteComments($conn, $housingName)."'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>
                         <button type='submit' name='commentDelete'>Delete</button>
                     </form>
@@ -46,7 +46,7 @@ function getComments($conn) {
     }
 }
 
-function editComments($conn) {
+function editComments($conn, $housingName) {
     if (isset($_POST['commentSubmit'])) {
         $cid = $_POST['cid'];
         $uid = $_POST['uid'];
@@ -56,19 +56,18 @@ function editComments($conn) {
         $sql = "UPDATE comments SET message='$message' WHERE cid='$cid'";
         $result = $conn->query($sql);
 
-        header("location: Ellicott.php");
-
+        echo '<script language="javascript">window.location.href ="masterHouseSelect.php?housingName='.$housingName.'"</script>';
     }
 }
 
-function deleteComments($conn) {
+function deleteComments($conn, $housingName) {
     if (isset($_POST['commentDelete'])) {
         $cid = $_POST['cid'];
 
         $sql = "DELETE FROM comments WHERE cid='$cid'";
         $result = $conn->query($sql);
 
-        header("location: Ellicott.php");
+        echo '<script language="javascript">window.location.href ="masterHouseSelect.php?housingName='.$housingName.'"</script>';
     }
 }
 

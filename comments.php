@@ -42,7 +42,7 @@ function getComments($conn) {
                 }
             }
             echo "</div>";
-        } 
+        }
     }
 }
 

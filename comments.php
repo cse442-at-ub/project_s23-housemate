@@ -26,6 +26,10 @@ function getComments($conn) {
                 echo $row['message'];
                 echo "</p>";
             if (isset($_SESSION['useruid'])) {
+<<<<<<< HEAD
+=======
+                if ($_SESSION['useruid'] == $row['uid'])
+>>>>>>> userReviewsBackend
                 echo "<form class='delete-form' method='POST' action='".deleteComments($conn)."'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>
                         <button type='submit' name='commentDelete'>Delete</button>

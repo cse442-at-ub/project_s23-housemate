@@ -7,6 +7,7 @@
 <head>
 	<title>Housemate</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="chatbot.js"></script>
 </head>
 <body>
 	<header>
@@ -52,6 +53,22 @@
 				<img src="pic.jpg" alt="placeholder image">
 			</div>
 		</div>
+		
+		<div class="chatbot-popup" id="chatbotPopup">
+		<div class="chatbot-popup-content">
+			<div class="chatbot-header">
+				<h3>Chatbot</h3>
+				<button class="close-button" onclick="closeChatbot()">&times;</button>
+			</div>
+			<div class="chatbot-body" id="chatlog">
+			</div>
+			<div class="chatbot-footer">
+				<input type="text" id="userinput" placeholder="Type your message..." />
+				<button onclick="sendMessage()">Send</button>
+			</div>
+		</div>
+	</div>
+
 	</main>
 </body>
 </html>

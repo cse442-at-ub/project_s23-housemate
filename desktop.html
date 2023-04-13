@@ -1,32 +1,46 @@
-
 <!DOCTYPE html>
-<link rel="stylesheet" href="style. css" />
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="style2.css"/>
 	<title>Desktop</title>
 </head>
-	<body>
+<body>
 
+	<div class="mini-navbar">
+		<h3>Housemate</h3>
+	</div>  
+	<div class="blue-navbar"></div> 
 
-		<div class="mini-navbar">
-			<h3>Housemate</h3>
-		</div>  <!--div for mini-navbar is closed  -->
-		<div class="blue-navbar"></div> 
-		
+	<div class="bluebox">
+		<div>
+			Start looking for your new housing!
+			<form id="regForm">
+				<input class ="blueboxbutton" type="button" onclick="window.location.href='create_account.html'" value="Create Account" />
+				<input class ="blueboxbutton" type="button" onclick="window.location.href='login_logout.html'" value="Sign In" />
+			</form>
+			<button class="chatbot-button" onclick="openChatbot()">Talk to us</button>
+		</div>
+	</div>
 
-		<div class="bluebox">
-			<div><!--div for 5a -->
-				Start looking for your new housing!
-				<form id="regForm">
-					<input class ="blueboxbutton" type="button" onclick="window.location.href='create_account.html'" value="Create Account" />
-					<input class ="blueboxbutton" type="button" onclick="window.location.href='login_logout.html'" value="Sign In" />
-				</form>
+	<a href="index.php">back</a>
+
+	<!-- Chatbot Popup -->
+	<div class="chatbot-popup" id="chatbotPopup">
+		<div class="chatbot-popup-content">
+			<div class="chatbot-header">
+				<h3>Chatbot</h3>
+				<button class="close-button" onclick="closeChatbot()">&times;</button>
+			</div>
+			<div class="chatbot-body" id="chatlog">
+			</div>
+			<div class="chatbot-footer">
+				<input type="text" id="userinput" placeholder="Type your message..." />
+				<button onclick="sendMessage()">Send</button>
 			</div>
 		</div>
+	</div>
 
-		<a href="index.php">back</a>
-
-	</body>
+	<script src="chatbot.js"></script>
+</body>
 </html>

@@ -4,7 +4,7 @@ if (isset($_POST["submit"])) {
 
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
-
+    $mail =  $_POST["email"];
     require_once 'dbh.php';
     require_once 'functions.php';
 
@@ -13,8 +13,7 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    updatePassword($conn, $email, $username, $pwd);
-    header("location: profile.html");
+    updatePassword($conn, $mail, $pwd);
 }
 else {
     header("location: change_pass.html");

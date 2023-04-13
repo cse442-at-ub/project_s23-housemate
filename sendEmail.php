@@ -1,6 +1,8 @@
 <?php
 
 if(isset($_POST['submit'])) {
+  ini_set("SMTP","ssl://smtp.gmail.com");
+ini_set("smtp_port","25");
   // Recipient email address
   require_once 'dbh.php';
   require_once 'functions.php';
@@ -21,7 +23,7 @@ if(isset($_POST['submit'])) {
   $smtpServer = 'smtp.gmail.com';
   $smtpUsername = 'ubhousemates@gmail.com';
   $smtpPassword = 'abc__ef!g';
-  $smtpPort = 587; // or 465 for SSL/TLS
+  $smtpPort = 25; // or 465 for SSL/TLS
 
   // Enable SMTP authentication and TLS encryption
   $smtpAuth = true;
@@ -38,8 +40,8 @@ if(isset($_POST['submit'])) {
   // Send the email
   if (mail($to, $subject, $message, $headers)) {
     // Email sent successfully
-    $newP = 'Abc__ef!g'
-    updatePassword($conn, $email, $username, $newP)
+    $newP = 'Abc__ef!g';
+    updatePassword($conn, $email, $newP);
     echo 'Email sent successfully.';
   } else {
     // Failed to send email

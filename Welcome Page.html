@@ -72,6 +72,8 @@
     
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
+    <link href="dropdowns.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
     
@@ -89,20 +91,21 @@
 
   <main class="px-3">
     <h1>Find your University Housing Today!</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
     <p class="lead">
-      <ul class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
-        <li><a class="dropdown-item rounded-2 active" href="#">Action</a></li>
-        <li><a class="dropdown-item rounded-2" href="#">Another action</a></li>
-        <li><a class="dropdown-item rounded-2" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item rounded-2" href="#">Separated link</a></li>
-      </ul>
+          <div class="dropdown">
+            <button class="dropbtn">Select your University</button>
+            <div class="dropdown-content">
+              <a href="NothCampusON.html">  University At Buffalo North On Campus  </a>
+              <a href="NothCampusOFF.html"> University At Buffalo North Off Campus  </a>
+              <a href="SouthCampusON.html"> University At Buffalo South On Campus  </a>
+              <a href="SouthCampusOFF.html">University At Buffalo South Off Campus  </a>
+              <a href="Buffalo State.html"> Buffalo State  </a>
+            </div>
+          </div>
     </p>
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
   </footer>
 </div>
 

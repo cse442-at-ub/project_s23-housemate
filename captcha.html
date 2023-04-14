@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="captcha.css">
+</head>
+<body>
+    <h1>CAPTCHA Verification</h1>
+    <p>Please complete the following CAPTCHA to verify that you are not a bot</p>
+    <div class="captcha-container">
+        <div class="captcha-box">
+            <div class="captcha-image" id="captchaImage"></div>
+            <button class="refresh-btn" onclick="refreshCaptcha()">Refresh</button>
+        </div>
+        <input type="text" class="captcha-input" id="captchaInput" placeholder="Enter the characters">
+        <button class="verify-btn" onclick="verifyCaptcha()">Verify</button>
+    </div>
+    <script src="captcha.js"></script>
+</body>
+</html>

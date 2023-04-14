@@ -280,3 +280,11 @@ opacity: 1;
 .delete-account button:hover {
     opacity: 1;
 }
+
+.themeContainer {
+    margin: 0 auto;
+}
+
+.colorPalatte {
+    display: inline-block;
+}

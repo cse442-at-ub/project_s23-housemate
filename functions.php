@@ -109,21 +109,32 @@ function updatePassword($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
-function updatePicture($conn, $email, $username, $image, $pwd) {
-    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? AND usersUid = ? AND usersPwd = ?";
+function updatePicture($conn, $email, $image) {
+    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? ";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: profile_pic.html");
         exit();
     }
-    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-    mysqli_stmt_bind_param($stmt, "sss", $image, $email, $username, $hashedPwd);
+    
+    mysqli_stmt_bind_param($stmt, "ss", $image, $email);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: profile.html");
+    header("location: desktop.html");
     exit();
+}
+function getPicture($conn) {
+    $sql = "SELECT userImage FROM users WHERE usersUid = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "s", $_SESSION["useruid"]);
+    $result = $conn->query($sql);
+    return $result;
 }
 function emptyInputLogin($email, $pwd) {
     $result;

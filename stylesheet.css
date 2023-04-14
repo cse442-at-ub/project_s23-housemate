@@ -282,9 +282,5 @@ opacity: 1;
 }
 
 .themeContainer {
-    margin: 0 auto;
-}
-
-.colorPalatte {
-    display: inline-block;
+    text-align: center;
 }

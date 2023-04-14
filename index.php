@@ -18,7 +18,9 @@
 				<h1>Housemate</h1>
 			</div>
       		<div class="navbar-right">
-				<a href="create_account.html">Login</a>
+				<a href="desktop.html">Login</a>
+				<a href="logout.php">Logout</a>
+				<a href="profile.html">Profile</a>
 			</div>
 		</nav>
 	</header>

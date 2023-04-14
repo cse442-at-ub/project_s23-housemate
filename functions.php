@@ -48,6 +48,15 @@ function pwdMatch($pwd, $pwdRepeat) {
 
     return $result;
 }
+function isStrongPassword($username, $password) {
+    $hasUppercase = preg_match('/[A-Z]/', $password);
+    $hasLowercase = preg_match('/[a-z]/', $password);
+    $hasNumber = preg_match('/\d/', $password);
+    $hasUsername = !$username || !preg_match('/' . preg_quote($username, '/') . '/i', $password);
+    $hasSpecialChar = preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password);
+    $isStrong = $hasUppercase && $hasLowercase && $hasNumber && $hasSpecialChar && strlen($password) >= 8 && $hasUsername;
+    return $isStrong;
+}
 
 function uidExists($conn, $username, $email) {
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
@@ -92,6 +101,7 @@ function createUser($conn, $email, $username, $pwd) {
     exit();
 }
 
+
 function emptyInputLogin($email, $pwd) {
     $result;
     if (empty($email) || empty($pwd)) {
@@ -103,7 +113,24 @@ function emptyInputLogin($email, $pwd) {
 
     return $result;
 }
+function updatePassword($conn, $email, $pwd) {
+    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: create_account.html?=stmtfailed");
+        exit();
+    }
 
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+
+    mysqli_stmt_bind_param($stmt, "ss", $hashedPwd, $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: logout.php");
+    exit();
+}
 function loginUSer($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 

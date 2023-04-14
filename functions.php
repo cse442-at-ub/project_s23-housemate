@@ -48,6 +48,15 @@ function pwdMatch($pwd, $pwdRepeat) {
 
     return $result;
 }
+function isStrongPassword($username, $password) {
+    $hasUppercase = preg_match('/[A-Z]/', $password);
+    $hasLowercase = preg_match('/[a-z]/', $password);
+    $hasNumber = preg_match('/\d/', $password);
+    $hasUsername = !$username || !preg_match('/' . preg_quote($username, '/') . '/i', $password);
+    $hasSpecialChar = preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password);
+    $isStrong = $hasUppercase && $hasLowercase && $hasNumber && $hasSpecialChar && strlen($password) >= 8 && $hasUsername;
+    return $isStrong;
+}
 
 function uidExists($conn, $username, $email) {
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";

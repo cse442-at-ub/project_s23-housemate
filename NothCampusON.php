@@ -85,17 +85,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
-
               <ul class="dropdown-menu">
-              <?php
-              echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Governers Complex">Governers Complex</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Greiner Hall">Greiner Hall</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Ellicott Complex">Ellicott Complex</a></li>
-                <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Hadley Apartments">Hadley Apartments</a></li>';
-              
-              ?>
-
-              <!--<ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Governers Complex">Governers Complex</a></li>
                 <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Greiner Hall">Greiner Hall</a></li>
                 <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Ellicott Complex">Ellicott Complex</a></li>
@@ -108,8 +98,6 @@
                 <li><a class="dropdown-item" href="Flickinger Court Apartments.html">Flickinger Court Apartments</a></li>
                 <li><a class="dropdown-item" href="Flint Village Apartments.html">Flint Village Apartments</a></li>
                 <li><a class="dropdown-item" href="Creekside Village Apartments.html">Creekside Village Apartments</a></li>
-              </ul>
-    -->
               </ul>
             </li>
             <li class="nav-item dropdown">

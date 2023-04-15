@@ -109,7 +109,7 @@ function updatePassword($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
-function updatePicture($conn, $email, $image) {
+function updatePicture($conn, $userUid, $image) {
     $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? ";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {

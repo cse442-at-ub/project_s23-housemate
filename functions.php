@@ -100,8 +100,51 @@ function createUser($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
+function updatePassword($conn, $email, $username, $pwd) {
+    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ? AND usersUid = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: create_account.html?=stmtfailed");
+        exit();
+    }
+
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
 
+    mysqli_stmt_bind_param($stmt, "sss", $hashedPwd, $email, $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: account_created.php?error=none");
+    exit();
+}
+function updatePicture($conn, $userUid, $image) {
+    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "ss", $image, $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: desktop.html");
+    exit();
+}
+function getPicture($conn) {
+    $sql = "SELECT userImage FROM users WHERE usersUid = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "s", $_SESSION["useruid"]);
+    $result = $conn->query($sql);
+    return $result;
+}
 function emptyInputLogin($email, $pwd) {
     $result;
     if (empty($email) || empty($pwd)) {

@@ -17,21 +17,11 @@
 			<div class="navbar-center">
 				<h1>Housemate</h1>
 			</div>
-
-			<?php
-				if (isset($_SESSION["useruid"])) {
-					echo "<div class=\"navbar-right\">";
-					echo "<a>Welcome " . $_SESSION["useruid"] . "!</a>";
-					echo "<a href=\"profile.php\">Profile</a>";
-					echo "<a href=\"logout.php\">Logout</a>";
-					echo "</div>";
-				}
-				else {
-					echo "<div class=\"navbar-right\">";
-					echo "<a href=\"login_logout.html\">Login</a>";
-					echo "</div>";
-				}
-			?>
+      		<div class="navbar-right">
+				<a href="desktop.html">Login</a>
+				<a href="logout.php">Logout</a>
+				<a href="profile.html">Profile</a>
+			</div>
 		</nav>
 	</header>
 	<main>

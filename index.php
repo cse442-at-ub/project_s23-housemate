@@ -21,6 +21,8 @@
 				<a href="desktop.html">Login</a>
 				<a href="logout.php">Logout</a>
 				<a href="profile.html">Profile</a>
+				<a href="forum.php">forum</a>
+
 			</div>
 		</nav>
 	</header>

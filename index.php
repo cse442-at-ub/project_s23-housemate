@@ -91,7 +91,7 @@
       <nav class="nav nav-masthead justify-content-center float-md-end">
 		<?php
 			if (isset($_SESSION["useruid"])) {
-        		echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page">Hello "'.$_SESSION['useruid'].'"!</a>';
+        		echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page">Hello '.$_SESSION['useruid'].'!</a>';
 				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="profile.php">Profile</a>';
 				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="forum.php">Forum</a>';
 				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="logout.php">Logout</a>';

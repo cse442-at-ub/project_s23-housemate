@@ -107,7 +107,7 @@
                 </div>
                 <br>
                 <div class="text-center">
-                  <a href="SouthCampusOFF.html">
+                  <a href="SouthCampusOFF.php">
                     <button type="button">Off Campus</button>
                     </a>
                 </div>

@@ -103,7 +103,7 @@
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Campus Location</a>
               <ul class="dropdown-menu">
                 <div class="text-center">
-                  <a href="SouthCampusON.html">
+                  <a href="SouthCampusON.php">
                     <button type="button">On Campus</button>
                     </a>
                 </div>

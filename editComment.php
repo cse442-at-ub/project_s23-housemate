@@ -27,7 +27,7 @@
         $date = $_POST['date'];
         $message = $_POST['message'];
 
-        echo "<form method='POST' action'".editComments($conn)."'>
+        echo "<form method='POST' action'".editComments($conn, $_SESSION['housingName'])."'>
                 <input type='hidden' name='cid' value='".$cid."'>
                 <input type='hidden' name='uid' value='".$uid."'>
                 <input type='hidden' name='date' value='".$date."'>

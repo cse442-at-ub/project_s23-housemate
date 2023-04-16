@@ -48,6 +48,15 @@ function pwdMatch($pwd, $pwdRepeat) {
 
     return $result;
 }
+function isStrongPassword($username, $password) {
+    $hasUppercase = preg_match('/[A-Z]/', $password);
+    $hasLowercase = preg_match('/[a-z]/', $password);
+    $hasNumber = preg_match('/\d/', $password);
+    $hasUsername = !$username || !preg_match('/' . preg_quote($username, '/') . '/i', $password);
+    $hasSpecialChar = preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password);
+    $isStrong = $hasUppercase && $hasLowercase && $hasNumber && $hasSpecialChar && strlen($password) >= 8 && $hasUsername;
+    return $isStrong;
+}
 
 function uidExists($conn, $username, $email) {
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
@@ -91,7 +100,51 @@ function createUser($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
+function updatePassword($conn, $email, $username, $pwd) {
+    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ? AND usersUid = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: create_account.html?=stmtfailed");
+        exit();
+    }
 
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+
+    mysqli_stmt_bind_param($stmt, "sss", $hashedPwd, $email, $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: account_created.php?error=none");
+    exit();
+}
+function updatePicture($conn, $userUid, $image) {
+    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "ss", $image, $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: desktop.html");
+    exit();
+}
+function getPicture($conn) {
+    $sql = "SELECT userImage FROM users WHERE usersUid = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "s", $_SESSION["useruid"]);
+    $result = $conn->query($sql);
+    return $result;
+}
 function emptyInputLogin($email, $pwd) {
     $result;
     if (empty($email) || empty($pwd)) {
@@ -103,7 +156,6 @@ function emptyInputLogin($email, $pwd) {
 
     return $result;
 }
-
 function loginUSer($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 
@@ -128,6 +180,21 @@ function loginUSer($conn, $email, $pwd) {
     }
 }
 
+function deleteAccount($conn) {
+    if (isset($_POST['accountDelete'])) {
+        $userid = $_POST['userid'];
+
+        $sql = "DELETE FROM users WHERE usersId='$userid'";
+        $result = $conn->query($sql);
+
+        session_start();
+        session_unset();
+        session_destroy();
+
+        header("location: index.php");
+        exit();
+    }
+}
 
 
 ?>

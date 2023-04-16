@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="style. css" />
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="style2.css"/>
+	<title>Housemate Forum</title>
+</head>
+	<body>
+
+		<div class="mini-navbar">
+			<h3>Housemate Forum Post</h3>
+		</div>  <!--div for mini-navbar is closed  -->
+		<div class="blue-navbar"></div> 
+		
+
+		<div class="whitebox">
+			<div><!--div for 5a -->
+				<form id="regForm" action="post.php" method="post">
+					Title:<br>
+					<input type="text" name="title"><br>
+                    <input type='hidden' name='uid' value='".$_SESSION["useruid"]."'>
+                    <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                    <textarea name='message'></textarea><br>
+					<button type="submit" name="submit">Post</button>
+				</form>
+				<!--<a href="account_created.html">Create your account </a>-->
+			</div>
+		</div>
+
+		<a href="desktop.html">back</a>
+
+	</body>
+</html>

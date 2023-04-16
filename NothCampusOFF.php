@@ -85,18 +85,32 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Welcome Page.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Bengal Hall.html">Bengal Hall</a></li>
-                <li><a class="dropdown-item" href="Neumann Hall.html">Neumann Hall</a></li>
-                <li><a class="dropdown-item" href="Bishop Hall.html">Bishop Hall</a></li>
-                <li><a class="dropdown-item" href="Towers Hall.html">Towers</a></li>
-                <li><a class="dropdown-item" href="Moore Hall.html">Moore Complex</a></li>
-                <li><a class="dropdown-item" href="STAC.html">STAC</a></li>
-                <li><a class="dropdown-item" href="Campus Walk NY.html">Campus Walk NY</a></li>
+                <?php 
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas On Rensch">Villas On Rensch</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas at Chestnut Ridge">Villas at Chestnut Ridge</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=The Station">The Station</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Auden Buffalo">Auden Buffalo</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=University Village at Sweethome">University Village at Sweethome</a></li>';
+                ?>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Campus Location</a>
+              <ul class="dropdown-menu">
+                <div class="text-center">
+                  <a href="NothCampusON.html">
+                    <button type="button">On Campus</button>
+                    </a>
+                </div>
+                <br>
+                <div class="text-center">
+                  <button type="button">Off Campus</button>
+                </div>
               </ul>
             </li>
           </ul>
@@ -107,7 +121,7 @@
 
   <main>
 
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1lGomJP7cVbhhO5O5bXufZ65nw_cXloA&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1adtNpJEuFhDYveaEjqcMNU6XyF6rA2Q&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
 
 
   </main>

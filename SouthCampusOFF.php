@@ -67,6 +67,9 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .text-center {
+        text-align: center;
+      }
     </style>
 
     
@@ -85,23 +88,22 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Welcome Page.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Villas on Rensch.html">Villas On Rensch</a></li>
-                <li><a class="dropdown-item" href="Villas at Chestnut Ridge.html">Villas at Chestnut Ridge<a></li>
-                <li><a class="dropdown-item" href="The Station.html">The Station</a></li>
-                <li><a class="dropdown-item" href="Auden Buffalo.html">Auden Buffalo</a></li>
-                <li><a class="dropdown-item" href="University Village at Sweethome.html">University Village at Sweethome</a></li>
+                <?php 
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Collegiate Village">Collegiate Village</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis">Axis</a></li>';
+                ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Campus Location</a>
               <ul class="dropdown-menu">
                 <div class="text-center">
-                  <a href="NothCampusON.html">
+                  <a href="SouthCampusON.html">
                     <button type="button">On Campus</button>
                     </a>
                 </div>
@@ -119,7 +121,7 @@
 
   <main>
 
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1adtNpJEuFhDYveaEjqcMNU6XyF6rA2Q&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=10-LopF77EmXsTSNZbZsMXBP5hyPlNow&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
 
 
   </main>

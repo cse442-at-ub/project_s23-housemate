@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -73,7 +70,7 @@
       body {
        background-image: url('Photo for Welcome Page.jpeg');
        background-repeat: no-repeat;
-       background-attachment: flex;
+       background-attachment: fixed;
        background-size: cover;
       }
     </style>
@@ -89,18 +86,7 @@
     <div>
       <h3 class="float-md-start mb-0">House<span>mate</span></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-		<?php
-			if (isset($_SESSION["useruid"])) {
-        		echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page">Hello "'.$_SESSION['useruid'].'"!</a>';
-				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="profile.php">Profile</a>';
-				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="forum.php">Forum</a>';
-				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="logout.php">Logout</a>';
-			}
-			else {
-				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="login_logout.html">Login</a>';	
-			}
-				
-		?>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="login.php">Login</a>
       </nav>
     </div>
   </header>
@@ -111,11 +97,11 @@
     <p class="lead">
         <select name="links" id="" size="1" onchange="window.location.href=this.value;">
           <option value=""> Select your University </option>
-          <option value="NothCampusON.php"> University At Buffalo North On Campus</option>
-          <option value="NothCampusOFF.php"> University At Buffalo North Off Campus</option>
-          <option value="SouthCampusON.php"> University At Buffalo South On Campus</option>
-          <option value="SouthCampusOFF.php"> University At Buffalo South Off Campus</option>
-          <option value="Buffalo State.php"> Buffalo State Campus</option>
+          <option value="NothCampusON.html"> University At Buffalo North On Campus</option>
+          <option value="NothCampusOFF.html"> University At Buffalo North Off Campus</option>
+          <option value="SouthCampusON.html"> University At Buffalo South On Campus</option>
+          <option value="SouthCampusOFF.html"> University At Buffalo South On Campus</option>
+          <option value="Buffalo State.html"> Buffalo State Campus</option>
         </select>
     </p>
   </main>

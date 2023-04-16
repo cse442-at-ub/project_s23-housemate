@@ -156,24 +156,6 @@ function emptyInputLogin($email, $pwd) {
 
     return $result;
 }
-function updatePassword($conn, $email, $pwd) {
-    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ?";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: create_account.html?=stmtfailed");
-        exit();
-    }
-
-    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-
-    mysqli_stmt_bind_param($stmt, "ss", $hashedPwd, $email);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-
-    header("location: logout.php");
-    exit();
-}
 function loginUSer($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 

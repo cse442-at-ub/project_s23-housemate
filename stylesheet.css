@@ -556,3 +556,7 @@ form {
 .delete-account button:hover {
     opacity: 1;
 }
+
+.themeContainer {
+    text-align: center;
+}

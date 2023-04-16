@@ -19,15 +19,26 @@
   </head>
   <body>
     <main>
-        
-        <?php
 
-            echo "<form class='delete-account' method='POST' action='".deleteAccount($conn)."'>
-                    <input type='hidden' name='userid' value='".$_SESSION['userid']."'>
-                    <button type='submit' name='accountDelete'>Delete Account</button>
-                </form>";
+      <div class="themeContainer">
+        <h2>Select a theme</h2>
+        <div class="colorPalette">
+          <div class="light">Light</div>
+          <div class="dark">Dark</div>
+          <div class="blue">Blue</div>
+          <div class="red">Red</div>
+          <div class="green">Green</div>
+        </div>
+      </div>
         
-        ?>
+      <?php
+
+          echo "<form class='delete-account' method='POST' action='".deleteAccount($conn)."'>
+                  <input type='hidden' name='userid' value='".$_SESSION['userid']."'>
+                  <button type='submit' name='accountDelete'>Delete Account</button>
+              </form>";
+      
+      ?>
 
     </main>
 

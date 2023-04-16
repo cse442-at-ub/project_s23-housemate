@@ -67,6 +67,9 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .text-center {
+        text-align: center;
+      }
     </style>
 
     
@@ -85,19 +88,15 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Welcome Page.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Governers.html">Governers</a></li>
-                <li><a class="dropdown-item" href="Greiner.html">Greiner</a></li>
-                <li><a class="dropdown-item" href="Ellicott.php">Ellicott</a></li>
-                <li><a class="dropdown-item" href="Hadley.html">Hadley</a></li>
-                <li><a class="dropdown-item" href="South Lake Village Apartments.html">South Lake Village Apartments</a></li>
-                <li><a class="dropdown-item" href="Flickinger Court Apartments.html">Flickinger Court Apartments</a></li>
-                <li><a class="dropdown-item" href="Flint Village Apartments.html">Flint Village Apartments</a></li>
-                <li><a class="dropdown-item" href="Creekside Village Apartments.html">Creekside Village Apartments</a></li>
+              <?php 
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear">Goodyear</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement">Clement</a></li>';
+                ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -108,9 +107,9 @@
                 </div>
                 <br>
                 <div class="text-center">
-                  <a href="NothCampusOFF.html">
-                  <button type="button">Off Campus</button>
-                  </a>
+                  <a href="SouthCampusOFF.html">
+                    <button type="button">Off Campus</button>
+                    </a>
                 </div>
               </ul>
             </li>
@@ -122,7 +121,7 @@
 
   <main>
 
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1C9PXLfZrQhXmgDC_2O8qPE1F3Qwy7aw&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1hriG3TnVjFjWEAFEdr_FpGv9HltyNLk&ehbc=2E312F" width = "100%" height = "1000px" style = "border: 0;" allowfullscreen = "" loading = "lazy"></iframe>
 
 
   </main>

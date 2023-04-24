@@ -94,8 +94,8 @@
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
               <?php 
-                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear">Goodyear</a></li>
-                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement">Clement</a></li>';
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Goodyear Hall">Goodyear Hall</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Clement Hall">Clement Hall</a></li>';
                 ?>
               </ul>
             </li>

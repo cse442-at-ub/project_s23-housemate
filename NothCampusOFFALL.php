@@ -140,8 +140,8 @@
                 <label for="louie">$900 - $1000</label>
               </div>
               <div onClick="window.location = 'NothCampusOFF1017.php';">
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">$1000 - $1700</label>
+                <input type="radio" id="last" name="drone" value="last">
+                <label for="last">$1000 - $1700</label>
               </div>
              </ul>
             </li>

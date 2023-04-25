@@ -199,8 +199,8 @@
               </div>
 
               <div onClick="window.location = 'NothCampusON89.php';">
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">$800 - $900</label>
+                <input type="radio" id="last" name="drone" value="last">
+                <label for="last">$800 - $900</label>
               </div>
               <div>
                 <input type="radio" id="huey" name="drone" value="huey"

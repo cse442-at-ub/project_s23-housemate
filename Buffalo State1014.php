@@ -117,8 +117,8 @@
                 <label for="louie">All</label>
               </div>
               <div onClick="window.location = 'Buffalo State69.php';">
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">$600 - $900</label>
+                <input type="radio" id="last" name="drone" value="last">
+                <label for="last">$600 - $900</label>
               <div>
                 <input type="radio" id="huey" name="drone" value="huey"
                       checked>

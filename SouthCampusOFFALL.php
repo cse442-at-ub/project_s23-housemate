@@ -103,7 +103,7 @@
               <ul class="dropdown-menu">
                 <?php 
                   echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Collegiate Village">Collegiate Village</a></li>
-                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis">Axis</a></li>';
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Axis 360">Axis 360</a></li>';
                 ?>
               </ul>
             </li>

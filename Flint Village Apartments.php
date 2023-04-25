@@ -23,6 +23,8 @@
         <div class="housing_title">
           <h1>Flint Village Apartments</h1>
           <a href="https://www.buffalo.edu/campusliving/find-your-home/where-can-i-live/apartments/flint-village-apartments.html">Learn more</a>
+          <br>
+          <a href="https://www.buffalo.edu/campusliving/apply-for-housing/rates.html">Pricing Information</a>
         </div>
         
 

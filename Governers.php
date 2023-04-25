@@ -23,6 +23,8 @@
         <div class="housing_title">
           <h1>Governers Complex</h1>
           <a href="https://www.buffalo.edu/administrative-services/managing-facilities/planning-designing-and-construction/building-profiles/profile-host-page.host.html/content/shared/university/page-content/facilities/gov.detail.html">Learn more</a>
+          <br>
+          <a href="https://www.buffalo.edu/campusliving/apply-for-housing/rates.html">Pricing Information</a>
         </div>
         
 

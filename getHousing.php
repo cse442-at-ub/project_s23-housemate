@@ -10,6 +10,7 @@ function getHousing($conn,$housingName) {
         echo "<div class='housing_title'>
             <h1>'".$row['housingName']."'</h1>
             <a href='".$row['link']."'>Learn more</a>
+            <a href='".$row['Price']."'>Price Details</a>
         </div>";
 
         echo "<!-- Slideshow container -->

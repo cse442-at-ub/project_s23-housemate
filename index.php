@@ -111,11 +111,11 @@
     <p class="lead">
         <select name="links" id="" size="1" onchange="window.location.href=this.value;">
           <option value=""> Select your University </option>
-          <option value="NothCampusON.php"> University At Buffalo North On Campus</option>
-          <option value="NothCampusOFF.php"> University At Buffalo North Off Campus</option>
-          <option value="SouthCampusON.php"> University At Buffalo South On Campus</option>
-          <option value="SouthCampusOFF.php"> University At Buffalo South Off Campus</option>
-          <option value="Buffalo State.php"> Buffalo State Campus</option>
+          <option value="NothCampusONALL.php"> University At Buffalo North On Campus</option>
+          <option value="NothCampusOFFALL.php"> University At Buffalo North Off Campus</option>
+          <option value="SouthCampusONALL.php"> University At Buffalo South On Campus</option>
+          <option value="SouthCampusOFFALL.php"> University At Buffalo South Off Campus</option>
+          <option value="Buffalo StateALL.php"> Buffalo State Campus</option>
         </select>
     </p>
   </main>

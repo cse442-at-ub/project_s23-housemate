@@ -209,6 +209,23 @@
               </div>
              </ul>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="Commons.html" data-bs-toggle="dropdown" aria-expanded="false">Food Places</a>
+              <ul class="dropdown-menu"> 
+                  <li>
+                    <a class="dropdown-item" href="Commons.html"> The Commons </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="SU.html"> Student Union </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Capen.html"> Capen </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Ellicott.html"> Ellicott and Greiner </a>
+                  </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

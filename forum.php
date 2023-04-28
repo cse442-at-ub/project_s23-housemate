@@ -8,7 +8,7 @@
 ?>
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="style. css" />
+<link rel="stylesheet" href="forum.css" />
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>

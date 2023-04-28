@@ -120,25 +120,28 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Price</a>
               <ul class="dropdown-menu"> 
-              <div onClick="window.location = 'NothCampusOFF910.php';">
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">All</label>
+              <div onClick="window.location = 'NothCampusOFFALL.php';">
+                <input type="radio" id="dewey" name="drone" value="dewey">
+                <label for="dewey">All</label>
+              </div>
 
               <div onClick="window.location = 'NothCampusOFF89.php';">
-                <input type="radio" id="dewey" name="drone" value="dewey">
-                <label for="dewey">$800 - $900</label>
+                <input type="radio" id="louie" name="drone" value="louie">
+                <label for="louie">$800 - $900</label>
               </div>
               <div>
                 <input type="radio" id="huey" name="drone" value="huey"
                       checked>
                 <label for="huey">$900 - $1000</label>
               </div>
-              </div>
               <div onClick="window.location = 'NothCampusOFF1017.php';">
                 <input type="radio" id="last" name="drone" value="last">
                 <label for="last">$1000 - $1700</label>
               </div>
              </ul>
+            </li>
+            <li>
+              <a class="nav-link" href="NorthOffFood.html" aria-expanded="false">Food Places</a>
             </li>
           </ul>
         </div>

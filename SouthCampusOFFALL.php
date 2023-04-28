@@ -129,8 +129,10 @@
                       checked>
                 <label for="huey">$1400 - $1700</label>
               </div>
-              </div>
              </ul>
+            </li>
+            <li>
+              <a class="nav-link" href="SouthOffFood.html" aria-expanded="false">Food Places</a>
             </li>
           </ul>
         </div>

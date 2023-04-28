@@ -58,6 +58,23 @@
           <span class="dots" onclick="currentSlide(3)"></span>
         </div>
 
+   <div class="rating">
+    <input type="radio" name="rating" id="star5" value="5"><label for="star5">☆</label>
+    <input type="radio" name="rating" id="star4" value="4"><label for="star4">☆</label>
+    <input type="radio" name="rating" id="star3" value="3"><label for="star3">☆</label>
+    <input type="radio" name="rating" id="star2" value="2"><label for="star2">☆</label>
+    <input type="radio" name="rating" id="star1" value="1"><label for="star1">☆</label>
+  </div>
+  <div class="average-rating">
+    Average Rating: <span id="average">0</span>
+    <br>
+    5 Stars: <span id="count-5">0</span>
+    4 Stars: <span id="count-4">0</span>
+    3 Stars: <span id="count-3">0</span>
+    2 Stars: <span id="count-2">0</span>
+    1 Star: <span id="count-1">0</span>
+  </div>
+
         <template class="reply-input-template">
           <div class="reply-input container">
             <img src="images/avatars/Yuanjie.webp" alt="" class="usr-img">
@@ -97,13 +114,13 @@
       
           <div class="comments-wrp">
       
-          </div> <!--commentS wrapper-->
+          </div> 
         <div class="reply-input container">
             <img src="images/avatars/Yuanjie.webp" alt="" class="usr-img">
             <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
             <button class="bu-primary">SEND</button>
-          </div> <!--reply input-->
-        </div> <!--comment sectio-->
+          </div> 
+        </div> 
         
         <div class="modal-wrp invisible">
           <div class="modal container">

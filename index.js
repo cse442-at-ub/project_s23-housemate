@@ -207,35 +207,49 @@ const count1 = document.getElementById('count-1');
 const average = document.getElementById('average');
 
 let ratings = {
-5: 0,
-4: 0,
-3: 0,
-2: 0,
-1: 0
+  5: 0,
+  4: 0,
+  3: 0,
+  2: 0,
+  1: 0
 };
 
-ratingInputs.forEach(input => {
-input.addEventListener('click', () => {
-  const rating = parseInt(input.value);
-  ratings[rating]++;
+let counter = 0;
+
+if (localStorage.getItem('ratings') !== null && localStorage.getItem('counter') !== null) {
+  ratings = JSON.parse(localStorage.getItem('ratings'));
+  counter = parseInt(localStorage.getItem('counter'));
   updateRatingCounts();
   updateAverageRating();
-});
+}
+
+ratingInputs.forEach(input => {
+  input.addEventListener('click', () => {
+    const rating = parseInt(input.value);
+    ratings[rating]++;
+    counter++;
+    updateRatingCounts();
+    updateAverageRating();
+    storeDataInLocalStorage();
+  });
 });
 
 function updateRatingCounts() {
-count5.textContent = ratings[5];
-count4.textContent = ratings[4];
-count3.textContent = ratings[3];
-count2.textContent = ratings[2];
-count1.textContent = ratings[1];
+  count5.textContent = ratings[5];
+  count4.textContent = ratings[4];
+  count3.textContent = ratings[3];
+  count2.textContent = ratings[2];
+  count1.textContent = ratings[1];
 }
 
 function updateAverageRating() {
-const totalRatings = ratings[5] + ratings[4] + ratings[3] + ratings[2] + ratings[1];
-let weightedTotal = (ratings[5] * 5) + (ratings[4] * 4) + (ratings[3] * 3) + (ratings[2] * 2) + ratings[1];
-const averageRating = (weightedTotal / totalRatings).toFixed(1);
-average.textContent = averageRating;
+  const totalRatings = ratings[5] + ratings[4] + ratings[3] + ratings[2] + ratings[1];
+  let weightedTotal = (ratings[5] * 5) + (ratings[4] * 4) + (ratings[3] * 3) + (ratings[2] * 2) + ratings[1];
+  const averageRating = (weightedTotal / totalRatings).toFixed(1);
+  average.textContent = averageRating;
 }
 
-
+function storeDataInLocalStorage() {
+  localStorage.setItem('ratings', JSON.stringify(ratings));
+  localStorage.setItem('counter', counter);
+}

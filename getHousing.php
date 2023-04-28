@@ -8,7 +8,7 @@ function getHousing($conn,$housingName) {
     while ($row = $result->fetch_assoc()) {
 
         echo "<div class='housing_title'>
-            <h1>'".$row['housingName']."'</h1>
+            <h1 style='color: ".$_SESSION['s_color'].";'>".$row['housingName']."</h1>
             <a href='".$row['link']."'>Learn more</a>
         </div>";
 

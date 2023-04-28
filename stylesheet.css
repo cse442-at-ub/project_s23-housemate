@@ -557,6 +557,23 @@ form {
     opacity: 1;
 }
 
+.colorSelect {
+    margin-top: 25vh;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+    text-align: center;
+}
+
+.colorSelect button {
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+}
+
+.colorSelect button:hover {
+    opacity: 1;
+}
+
 .themeContainer {
     text-align: center;
 }

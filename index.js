@@ -226,11 +226,26 @@ if (localStorage.getItem('ratings') !== null && localStorage.getItem('counter') 
 ratingInputs.forEach(input => {
   input.addEventListener('click', () => {
     const rating = parseInt(input.value);
-    ratings[rating]++;
-    counter++;
-    updateRatingCounts();
-    updateAverageRating();
-    storeDataInLocalStorage();
+    const post_id = parseInt(document.getElementById('post-id').textContent);
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        const response = JSON.parse(this.responseText);
+        if (response.status == 'success') {
+          ratings[rating]++;
+          counter++;
+          updateRatingCounts();
+          updateAverageRating(response.average_rating);
+          storeDataInLocalStorage();
+        } else {
+          alert(response.message);
+        }
+      }
+    };
+    xhr.open('POST', 'rating.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`post_id=${post_id}&rating=${rating}`);
   });
 });
 
@@ -242,11 +257,8 @@ function updateRatingCounts() {
   count1.textContent = ratings[1];
 }
 
-function updateAverageRating() {
-  const totalRatings = ratings[5] + ratings[4] + ratings[3] + ratings[2] + ratings[1];
-  let weightedTotal = (ratings[5] * 5) + (ratings[4] * 4) + (ratings[3] * 3) + (ratings[2] * 2) + ratings[1];
-  const averageRating = (weightedTotal / totalRatings).toFixed(1);
-  average.textContent = averageRating;
+function updateAverageRating(averageRating) {
+  average.textContent = averageRating.toFixed(1);
 }
 
 function storeDataInLocalStorage() {

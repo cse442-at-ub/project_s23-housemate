@@ -19,31 +19,34 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <?php
+    echo "<body style=' background-color: ".$_SESSION['p_color'].";'>";
+  ?>
     <main>
-      
-        <div class="header">
-          <div class="inner_header">
-            <div class="logo_container">
-              <a href="index.php">House<span>mate</span></a>
-            </div>
+
+    <?php
+    echo '<div class="header" style="background-color: '.$_SESSION['s_color'].';">
+      <div class="inner_header" style="background-color: '.$_SESSION['s_color'].';">
+        <div class="logo_container" style="background-color: '.$_SESSION['s_color'].';">
+          <a style="background-color: '.$_SESSION['s_color'].'; color: '.$_SESSION['p_color'].';" href="index.php">House<span style="background-color: '.$_SESSION['s_color'].';">mate</span></a>
+        </div>';
 
 
-            <?php
-            if (isset($_SESSION["useruid"])) {
-              echo "<ul class=\"navigation\">";
-              echo "<a><li>Welcome " . $_SESSION["useruid"] . "!</li></a>";
-              echo "<a href=\"profile.php\"><li>Profile</li></a>";
-              echo "<a href=\"logout.php\"><li>Logout</li></a>";
-              echo "</ul>";
-            }
-            else {
-              echo "<ul class=\"navigation\">";
-              echo "<a href=\"login_logout.html\"><li>Login</li></a>";
-              echo "</ul>";
-            }
-			    ?>
-        </div>
+        
+        if (isset($_SESSION["useruid"])) {
+          echo "<ul style='background-color: ".$_SESSION['s_color'].";' class=\"navigation\">";
+          echo "<a style='background-color: ".$_SESSION['s_color']."; color: '><li style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color'].";'>Hello " . $_SESSION["useruid"] . "!</li></a>";
+          echo "<a style='background-color: ".$_SESSION['s_color']."; color: ' href=\"profile.php\"><li style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color'].";'>Profile</li></a>";
+          echo "<a style='background-color: ".$_SESSION['s_color']."; ' href=\"logout.php\"><li style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color'].";'>Logout</li></a>";
+          echo "</ul>";
+        }
+        else {
+          echo "<ul class=\"navigation\">";
+          echo "<a href=\"login_logout.html\"><li>Login</li></a>";
+          echo "</ul>";
+        }
+      ?>
+    </div>
         
         
         <?php

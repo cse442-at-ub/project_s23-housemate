@@ -143,6 +143,9 @@
               </div>
              </ul>
             </li>
+            <li>
+              <a class="nav-link" href="NorthOffFood.html" aria-expanded="false">Food Places</a>
+            </li>
           </ul>
         </div>
       </div>

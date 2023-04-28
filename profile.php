@@ -104,18 +104,15 @@
       <button style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color']."' type=\"submit\">Save</button>";
       ?>
     </form>
-    <!--
+    
     <div class="themeContainer" style="text-align: center; padding-top: 5vh;">
-        <h2>Select a theme</h2 style="color: black;">
-        <div class="colorPalette" style="text-align: center; ">
-          <div class="light" style="border-style: solid; background-color: white; width: 200px; height: 100px; display: inline-block; padding-right: 0; padding-left: 0;">Light</div>
-          <div class="dark" style="border-style: solid; border-color: black; color: white; background-color: black; width: 200px; height: 100px; display: inline-block; padding-right: 0; padding-left: 0;">Dark</div>
-          <div class="blue" style="border-style: solid; border-color: black; color: white; background-color: blue; width: 200px; height: 100px; display: inline-block; padding-right: 0; padding-left: 0;">Blue</div>
-          <div class="red" style="border-style: solid; background-color: red; width: 200px; height: 100px; display: inline-block; padding-right: 0; padding-left: 0;">Red</div>
-          <div class="green" style="border-style: solid; background-color: green; width: 200px; height: 100px; display: inline-block; padding-right: 0; padding-left: 0;" >Green</div>
-        </div>
-      </div>
-      -->
+        <h2>Select a font</h2 style="color: black;">
+        <select name="font" id="font" style="text-align: center; ">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Open-Sans">Open-Sans</option>
+        </select >
+      </div><br />
 <!--
       <div class="whitebox" style="text-align: center; padding-top: 5vh;">
 			<div><\!--div for 5a --\>

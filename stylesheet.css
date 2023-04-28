@@ -560,3 +560,35 @@ form {
 .themeContainer {
     text-align: center;
 }
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  color: #ddd;
+  font-size: 2em;
+  margin-right: 0.25em;
+  cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #FFD700;
+}
+
+.rating input[type="radio"]:checked ~ label {
+  color: #FFD700;
+}
+
+.average-rating {
+  margin-top: 1em;
+  font-size: 1.2em;
+  text-align: center;
+}

@@ -100,7 +100,7 @@
               <ul class="dropdown-menu">
                 <?php 
                   echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas On Rensch">Villas On Rensch</a></li>
-                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas at Chestnut Ridge">Villas at Chestnut Ridge</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas On Chestnut Ridge">Villas at Chestnut Ridge</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=The Station">The Station</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Auden Buffalo">Auden Buffalo</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=University Village at Sweethome">University Village at Sweethome</a></li>';

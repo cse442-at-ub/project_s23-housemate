@@ -99,7 +99,7 @@
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
                 <?php 
-                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas at Chestnut Ridge">Villas at Chestnut Ridge</a></li>
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Villas On Chestnut Ridge">Villas at Chestnut Ridge</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=The Station">The Station</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Auden Buffalo">Auden Buffalo</a></li>';
                 ?>

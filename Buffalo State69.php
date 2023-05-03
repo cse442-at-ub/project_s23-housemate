@@ -99,7 +99,7 @@
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Listings</a>
               <ul class="dropdown-menu">
                 <?php 
-                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Campus Walk NY<">Campus Walk NY</a></li>';
+                  echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Campus Walk NY">Campus Walk NY</a></li>';
                 ?>
               </ul>
             </li>

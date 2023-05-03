@@ -105,7 +105,7 @@
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Towers Hall">Towers Hall</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Moore Complex">Moore Complex</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=STAC">STAC</a></li>
-                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Campus Walk NY<">Campus Walk NY</a></li>';
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Campus Walk NY">Campus Walk NY</a></li>';
                 ?>
               </ul>
             </li>

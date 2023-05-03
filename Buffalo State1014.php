@@ -101,7 +101,7 @@
                 <?php 
                   echo '<li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Bengal Hall">Bengal Hall</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Neumann Hall">Neumann Hall</a></li>
-                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Bishop Hal">Bishop Hall</a></li>
+                  <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Bishop Hall">Bishop Hall</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Towers Hall">Towers Hall</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=Moore Complex">Moore Complex</a></li>
                   <li><a class="dropdown-item" href="masterHouseSelect.php?housingName=STAC">STAC</a></li>';

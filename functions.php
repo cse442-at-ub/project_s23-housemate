@@ -97,6 +97,7 @@ function createUser($conn, $email, $username, $pwd) {
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
+    loginUser($conn, $username, $pwd);
     header("location: account_created.php?error=none");
     exit();
 }
@@ -156,7 +157,7 @@ function emptyInputLogin($email, $pwd) {
 
     return $result;
 }
-function loginUSer($conn, $email, $pwd) {
+function loginUser($conn, $email, $pwd) {
     $uidExists = uidExists($conn, $email, $email);
 
     if ($uidExists === false) {

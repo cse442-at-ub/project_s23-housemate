@@ -609,3 +609,81 @@ form {
   font-size: 1.2em;
   text-align: center;
 }
+
+.login_header {
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 80px;
+}
+
+.login_header a {
+    color: white;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.login_header a span{
+    font-weight: 800;
+    background-color: black;
+}
+
+.whitebox {
+    margin-top: 200px;
+    background-color: white;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.whitebox form {
+    width: 250px;
+    font-family: 'Open Sans';
+    padding-bottom: 50px;
+}
+
+.whitebox form h2{
+    font-family: 'Open Sans';
+    padding-top: 25px;
+    margin-bottom: 25px;
+}
+
+.whitebox form input {
+    width: 250px
+}
+
+.whitebox form button{
+    margin-top: 20px;;
+    width: 250px;
+    opacity: 0.8;
+    background-color: black;
+    margin-bottom: 25px;
+}
+
+.whitebox form button:hover{
+    margin-top: 20px;;
+    width: 250px;
+    opacity: 1;
+}
+
+.whitebox form a{
+    color: black;
+    opacity: 1;
+}
+.whitebox form a:hover {
+    opacity: 0.8;
+}
+
+.success {
+    color: black;
+    opacity: 1;
+}
+
+.success:hover {
+    opacity: 0.8;
+}
+

@@ -29,10 +29,10 @@ if (isset($_POST["submit"])) {
         header("location: create_account.html?error=usernametaken");
         exit();
     }
-    if (isStrongPassword($username, $pwd) == false) {
+    /**if (isStrongPassword($username, $pwd) == false) {
         header("location: create_account.html?error=badpassword");
         exit();
-    }
+    }*/
 
     createUser($conn, $email, $username, $pwd);
     

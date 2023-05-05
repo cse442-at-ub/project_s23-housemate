@@ -4,25 +4,23 @@
 
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="style. css" />
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="style2.css"/>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
 	<title>Account Created</title>
 </head>
 	<body>
 
-		<div class="mini-navbar">
-			<h3>Housemate</h3>
-		</div>  <!--div for mini-navbar is closed  -->
-		<div class="blue-navbar"></div> 
+		<div class="login_header">
+			<a href="index.php">House<span>mate</span></a>
+		</div>
+
 
 		<div class="whitebox">
 			<h3> Your Account has been created successfully!</h3>
-			<a href="login_logout.html">Back to login -></a>
+			<a class="success" href="index.php">Return to homepage</a>
 		</div>
 
-		<a href="create_account.html">back</a>
 	</body>
 </html>

@@ -104,15 +104,6 @@
       <button style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color']."' type=\"submit\">Save</button>";
       ?>
     </form>
-    
-    <div class="themeContainer" style="text-align: center; padding-top: 5vh;">
-        <h2>Select a font</h2 style="color: black;">
-        <select name="font" id="font" style="text-align: center; ">
-          <option value="Arial">Arial</option>
-          <option value="Times New Roman">Times New Roman</option>
-          <option value="Open-Sans">Open-Sans</option>
-        </select >
-      </div><br />
 <!--
       <div class="whitebox" style="text-align: center; padding-top: 5vh;">
 			<div><\!--div for 5a --\>
@@ -125,6 +116,7 @@
       <?php
 
           echo "<form class='delete-account' method='POST' action='".deleteAccount($conn)."'>
+                  <h2>Delete your account</h2>
                   <input type='hidden' name='userid' value='".$_SESSION['userid']."'>
                   <button style='background-color: ".$_SESSION['s_color']."; color: ".$_SESSION['p_color']."' type='submit' name='accountDelete'>Delete Account</button>
               </form>";

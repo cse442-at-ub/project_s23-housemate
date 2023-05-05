@@ -1,38 +1,36 @@
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="style. css" />
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="style2.css"/>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
 	<title>Create Account</title>
 </head>
 	<body>
 
-		<div class="mini-navbar">
-			<h3>Housemate</h3>
-		</div>  <!--div for mini-navbar is closed  -->
-		<div class="blue-navbar"></div> 
+		<div class="login_header">
+			<a href="index.php">House<span>mate</span></a>
+		</div>
 		
 
 		<div class="whitebox">
-			<div><!--div for 5a -->
-				<form id="regForm" action="signUp.php" method="post">
-					Email:<br> 
-					<input type="email" name="email"><br>
-					Username:<br>
-					<input type="text" name="uid"><br>
-					Password:<br>
-					<input type="password" name="pwd"><br>
-					Confirm password:<br>
-					<input type="password" name="pwdrepeat"><br>
-					<button type="submit" name="submit">Sign up</button>
-				</form>
-				<!--<a href="account_created.html">Create your account </a>-->
-			</div>
-		</div>
+			<form id="regForm" action="signUp.php" method="post">
+				<h2>Sign Up</h2>
+				Email:<br> 
+				<input type="email" name="email"><br>
+				Username:<br>
+				<input type="text" name="uid"><br>
+				Password:<br>
+				<input type="password" name="pwd"><br>
+				Confirm password:<br>
+				<input type="password" name="pwdrepeat"><br>
+				<button type="submit" name="submit">Sign up</button>
 
-		<a href="desktop.html">back</a>
+				<h3>Have an account?</h3>
+				<a href="login_logout.html">Login</a>
+			</form>
+
+		</div>
 
 	</body>
 </html>

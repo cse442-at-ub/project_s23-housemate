@@ -84,18 +84,36 @@
   <header class="mb-auto">
     <div>
     <?php
-      echo '<h3 style="color: '.$_SESSION['p_color'].';" class="float-md-start mb-0">House<span>mate</span></h3>
+
+    
+
+    if (isset($_SESSION["useruid"])) {
+
+      if (isset($_SESSION['p_color'])) {
+        echo '<h3 style="color: '.$_SESSION['p_color'].';" class="float-md-start mb-0">House<span>mate</span></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">';
 		
-			if (isset($_SESSION["useruid"])) {
+			
         		echo '<a style="color: '.$_SESSION['p_color'].';" class="nav-link fw-bold py-1 px-0 active" aria-current="page">Hello '.$_SESSION['useruid'].'!</a>';
 				echo '<a style="color: '.$_SESSION['p_color'].';" class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="profile.php">Profile</a>';
-				echo '<a style="color: '.$_SESSION['p_color'].';" class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="forum.php">Forum</a>';
 				echo '<a style="color: '.$_SESSION['p_color'].';" class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="logout.php">Logout</a>';
+      }
+      else {
+        echo '<h3 class="float-md-start mb-0">House<span>mate</span></h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">';
+		
+			
+        		echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page">Hello '.$_SESSION['useruid'].'!</a>';
+				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="profile.php">Profile</a>';
+				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="logout.php">Logout</a>';
+      }
+      
 			}
-			else {
-				echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="login_logout.html">Login</a>';	
-			}
+    else {
+      echo '<h3 class="float-md-start mb-0">House<span>mate</span></h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">';
+      echo '<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="login_logout.html">Login</a>';	
+    }
 				
 		?>
       </nav>
@@ -104,7 +122,18 @@
 
   <main class="px-0">
     <?php
-    echo '<h1 style="color: '.$_SESSION['p_color'].';">Find your University Housing Today!</h1>'; ?>
+    if (isset($_SESSION["useruid"])) {
+      if (isset($_SESSION['p_color'])) {
+        echo '<h1 style="color: '.$_SESSION['p_color'].';">Find your University Housing Today!</h1>'; 
+      }
+      else {
+        echo '<h1>Find your University Housing Today!</h1>'; 
+      }
+    }
+    else {
+      echo '<h1>Find your University Housing Today!</h1>'; 
+    }
+    ?>
     <br>
     <p class="lead">
         <select name="links" id="" size="1" onchange="window.location.href=this.value;">

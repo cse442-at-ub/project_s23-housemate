@@ -1,90 +1,116 @@
-/*headings, titles, and body css*/
-body{
-	background-color: #6D89A1;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-	margin: 0;
-	font-size: 18pt;
-	text-align: center;
+.login-dark {
+  height:900px;
+  background:#475d62 url(Photo\ for\ Welcome\ Page.jpeg);
+  background-size:cover;
+  position:relative;
+}
+
+.login-dark form {
+
+  max-width:350px;
+  max-height: 350px;
+  width:100%;
+  height: 100%;
+  background-color:#1e2833  ;
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:30%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+  font-size: 22px;
+   text-align: center; /* centers the content inside the inner box */
+}
+
+
+.login-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:200px;
+  color:#2980ef;
+}
+
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+  font-size:22px ;
+  
+}
+
+.login-dark form .btn-primary {
+  text-align:center;
+  background:#214a80;
+  border:none;
+  border-radius:4px;
+  padding:12px;
+  box-shadow:none;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
+  font-size: 15px;
+}
+
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#214a80;
+  outline:none;
+}
+
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:22px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
+}
+
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
+}
+
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
 }
 
 .mini-navbar {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    background-color: #2D5D68;
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  padding: 10px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+a.back-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: #214a80;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  width: fit-content;
+  text-align: center;
 }
 
-.blue-navbar {
-    display: block;
-    padding: 0px;
-    height: 20px;
-    margin-bottom: 30px;
-    background-color: #023A46;
+a.back-btn:hover {
+  background-color: #2980ef;
 }
 
-.whitebox{
-    height: 375px;
-    width: 300px;
-    margin: auto;
-    margin-top: 30px;
-    background-color: #fff;
-    border: 1px solid black;
-    padding: 30px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12pt;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'] {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-button[type='submit'] {
-    background-color: #023A46;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16pt;
-    cursor: pointer;
-}
-
-button[type='submit']:hover {
-    background-color: #2D5D68;
-}
-
-/*Links css*/
-a{
-	color: black;
-}
-a:hover{
-	color: blue;
-}
-
-h2{
-	font-size: 14pt;
-	text-align: center;
-	color:black;
-}
 
 .chatbot-popup {
   display: none;
@@ -147,4 +173,88 @@ h2{
 
 button {
   padding: 5px;
+}
+
+/* Styles for phones */
+@media (max-width: 767px) {
+  .login-dark {
+    height: auto;
+    background-size: contain;
+    padding: 20px;
+  }
+  
+  .login-dark form {
+    max-width: 100%;
+    max-height: none;
+    padding: 20px;
+  }
+  
+  .login-dark .illustration {
+    font-size: 100px;
+  }
+  
+  .login-dark form .form-control {
+    font-size: 18px;
+  }
+  
+  .login-dark form .btn-primary {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .login-dark form .forgot {
+    font-size: 18px;
+  }
+  
+  .mini-navbar {
+    font-size: 20px;
+  }
+  
+  a.back-btn {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 10px auto;
+  }
+}
+
+/* Styles for tablets */
+@media (max-width: 991px) {
+  .login-dark {
+    height: auto;
+    background-size: contain;
+    padding: 40px;
+  }
+  
+  .login-dark form {
+    max-width: 100%;
+    max-height: none;
+    padding: 40px;
+  }
+  
+  .login-dark .illustration {
+    font-size: 150px;
+  }
+  
+  .login-dark form .form-control {
+    font-size: 20px;
+  }
+  
+  .login-dark form .btn-primary {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .login-dark form .forgot {
+    font-size: 20px;
+  }
+  
+  .mini-navbar {
+    font-size: 24px;
+  }
+  
+  a.back-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 15px auto;
+  }
 }

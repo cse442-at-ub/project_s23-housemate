@@ -1,0 +1,102 @@
+body {
+    background-color: #475d62;
+    height:900px;
+    background:#475d62 url(Photo\ for\ Welcome\ Page.jpeg);
+    background-size:cover;
+    position:relative;
+}
+    
+.bluebox {
+    max-width: 350px;
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+    background-color: #1e2833;
+    padding: 40px;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    
+}
+    
+.bluebox form {
+    max-height: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    
+.bluebox h1 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+    
+.bluebox input[type="button"] {
+    background-color: #214a80;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+    
+.bluebox input[type="button"] {
+    background-color: #214a80;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 160px; /* add a fixed width */
+    height: 50px; /* add a fixed height */
+}
+ 
+.mini-navbar {
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    padding: 10px;
+    margin: 0;
+    background-color: #000;
+}
+
+a.back-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    background-color: #214a80;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+      
+a.back-btn:hover {
+    background-color: #2980ef;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+

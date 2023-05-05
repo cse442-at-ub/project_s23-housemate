@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
 error_reporting(0);
 require_once 'dbh.php';
 require_once 'functions.php';
@@ -6,24 +8,32 @@ $msg = "";
  
 // If upload button is clicked ...
 if (isset($_POST['upload'])) {
- 
+
+    $userUid = $_SESSION["useruid"];
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./images/" . $filename;
-    $email = $_POST["email"];
+    $filetype = $_FILES["uploadfile"]["type"];
+    $filesize = $_FILES["uploadfile"]["size"];
+    echo "$filesize"; 
+    echo "$filename"; 
 
- 
-    // Get all the submitted data from the form
-    updatePicture($conn, $email, $filename)
-    // Execute query
+    $email = $_SESSION['username'];
+    $base64 = base64_encode(file_get_contents($tempname));
+    echo "File uploaded successfully."; 
 
- 
-    // Now let's move the uploaded image into the folder: image
-    if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3>  Image uploaded successfully!</h3>";
-    } else {
-        echo "<h3>  Failed to upload image!</h3>";
+    $sql = "UPDATE users SET userImage = ? WHERE usersUid = ? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: profile_pic.html");
+        exit();
     }
+
+    mysqli_stmt_bind_param($stmt, "ss", $base64, $userUid);
+    if(!mysqli_stmt_execute($stmt)){
+    $error = mysqli_error($conn);
+    echo "Error: $error";
+    }
+    mysqli_stmt_close($stmt);    
 }
 ?>
  
@@ -43,26 +53,27 @@ if (isset($_POST['upload'])) {
                 <input class="form-control" type="file" name="uploadfile" value="" />
             </div>
 
-            Email:<br> 
+            Email:<br>  
 					<input type="email" name="email"><br>    
                             <div class="form-group">
                 <button class="btn btn-primary" type="submit" name="upload">UPLOAD</button>
             </div>
         </form>
     </div>
-    <div id="display-image">
-        <?php
-        $query = " select * from image ";
-        $result = mysqli_query($db, $query);
- 
-        while ($data = mysqli_fetch_assoc($result)) {
-        ?>
-            <img src="./image/<?php echo $data['filename']; ?>">
- 
-        <?php
-        }
-        ?>
-    </div>
+    <?php 
+$sql = "SELECT userImage FROM users WHERE usersUid = ? ";
+$stmt = mysqli_stmt_init($conn);
+mysqli_stmt_prepare($stmt, $sql);
+mysqli_stmt_bind_param($stmt, "s", $_SESSION["useruid"]);
+$result = $conn->query($sql);
+mysqli_stmt_close($stmt);    
+?>
+
+    <div class="gallery"> 
+        <?php ?> 
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($result); ?>" /> 
+        <?php  ?> 
+    </div> 
 </body>
  
 </html>

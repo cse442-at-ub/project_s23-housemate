@@ -49,8 +49,9 @@
         <?php
 
         $_SESSION['housingName'] = $_GET['housingName'];
+         
+        
         getHousing($conn, $_SESSION['housingName']);
-
         if (isset($_SESSION['useruid'])) {
           echo "<form method='POST' action'".setComments($conn, $_SESSION['housingName'])."'>
                 <input type='hidden' name='uid' value='".$_SESSION["useruid"]."'>

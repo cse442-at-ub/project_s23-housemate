@@ -42,7 +42,14 @@
         }
       ?>
     </div>
+    <?php 
+$sql = "SELECT * FROM users WHERE usersUid = ? ";
+$stmt = mysqli_stmt_init($conn);
+mysqli_stmt_prepare($stmt, $sql);
+mysqli_stmt_bind_param($stmt, "s", $_SESSION["useruid"]);
+$result = $conn->query($sql);
 
+?>
     <div class="themeContainer" style="text-align: center; padding-top: 5vh;">
         <h2>Select a theme</h2 style="color: black;">
         <div class="colorPalette" style="text-align: center; ">
@@ -62,15 +69,18 @@
 		</div>
 
       <?php
-
-          echo "<form class='delete-account' method='POST' action='".deleteAccount($conn)."'>
+          
+                  echo "<form class='delete-account' method='POST' action='".deleteAccount($conn)."'>
                   <input type='hidden' name='userid' value='".$_SESSION['userid']."'>
                   <button type='submit' name='accountDelete'>Delete Account</button>
               </form>";
+
+  
       
       ?>
 
     </main>
+
 
   </body>
 </html>

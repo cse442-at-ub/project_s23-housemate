@@ -1,5 +1,67 @@
 <?php
+function getUtility($conn,$housingId) {
+    $sql = "SELECT * FROM utility WHERE housingId='$housingId'";
+    $result = $conn->query($sql);
+    
+    
+    while ($row = $result->fetch_assoc()) {
 
+        echo "<div class='box'>
+            <h10>'".$row['userUid']."'</h2>
+            <br>
+            <h10>Wifi Included: '".$row['wifi_Inc']."'</h10> 
+            <br>  
+            <h10>Wifi Quality: '".$row['wifiQuality']."'</h10>   
+            <br>
+            <h10>Air conditioning Included: '".$row['aircon_Inc']."'</h10> 
+            <br>  
+            <h10>Air conditioning Quality: '".$row['airconQuality']."'</h10> 
+            <br>  
+            <h10>Water Included: '".$row['water_Inc']."'</h10> 
+            <br>  
+            <h10>Water Quality: '".$row['water_Quality']."'</h10> 
+            <br> 
+            <h10>Electricity Included: '".$row['elec_Inc']."'</h10> 
+            <br>
+            <h10>Electricity Quality: '".$row['elecQuality']."'</h10> 
+            <br>  
+            <h10>Exercise Facility Included: '".$row['ex_Inc']."'</h10> 
+            <br> 
+            <h10>Exercise Facility Quality: '".$row['exQuality']."'</h10> 
+            <br>
+            <h10>Additional Comments: '".$row['comment']."'</h10> 
+            <br>
+            <br>
+        ";
+    }
+}
+function setUtil($conn, $housingId, $userId){
+    if (isset($_POST['Submit'])) {
+        $wifi_Inc = isset($_POST['attribute1']) ? $_POST['attribute1'] : "";
+        (int)$wifiQuality = $_POST['attribute2'];
+        $aircon_Inc = isset($_POST['attribute3']) ? $_POST['attribute3'] : "";
+        (int)$airconQuality = $_POST['attribute4'];
+        $elec_Inc = isset($_POST['attribute5']) ? $_POST['attribute5'] : "";
+        (int)$elecQuality = $_POST['attribute6'];
+        $water_Inc = isset($_POST['attribute7']) ? $_POST['attribute7'] : "";
+        (int)$waterQuality = $_POST['attribute8'];
+        $ex_Inc = isset($_POST['attribute9']) ? $_POST['attribute9'] : "";
+        (int)$exQuality = $_POST['attribute10'];
+        $comment = $_POST['message'];
+        $sql = 'INSERT INTO utility (housingId, userUid, wifi_Inc, wifiQuality, aircon_Inc,airconQuality,water_Inc,water_Quality,elec_Inc,elecQuality,ex_Inc,exQuality,comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)';
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            $error = mysqli_error($conn);
+            echo "Error: $error";
+            //header("location: profile_pic.html");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "sssssssssssss",$housingId,$userId, $wifi_Inc, $wifiQuality, $aircon_Inc,$airconQuality,$water_Inc,$waterQuality,$elec_Inc,$elecQuality,$ex_Inc,$exQuality,$comment);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        echo '<script language="javascript">window.location.href ="masterUtilitySelect.php?housingId='.$housingId.'"</script>';
+    }
+}
 function emptyInputSignup($email, $username, $pwd, $pwdRepeat) {
     $result;
 
@@ -100,8 +162,8 @@ function createUser($conn, $email, $username, $pwd) {
     header("location: account_created.php?error=none");
     exit();
 }
-function updatePassword($conn, $email, $username, $pwd) {
-    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ? AND usersUid = ?";
+function updatePassword($conn, $email, $pwd) {
+    $sql = "UPDATE users SET usersPwd = ? WHERE usersEmail = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: create_account.html?=stmtfailed");
@@ -111,7 +173,7 @@ function updatePassword($conn, $email, $username, $pwd) {
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
 
-    mysqli_stmt_bind_param($stmt, "sss", $hashedPwd, $email, $username);
+    mysqli_stmt_bind_param($stmt, "ss", $hashedPwd, $email);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -119,18 +181,17 @@ function updatePassword($conn, $email, $username, $pwd) {
     exit();
 }
 function updatePicture($conn, $userUid, $image) {
-    $sql = "UPDATE users SET userImage = ? WHERE usersEmail = ? ";
+    $sql = "UPDATE users SET userImage = ? WHERE usersUid = ? ";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: profile_pic.html");
         exit();
     }
     
-    mysqli_stmt_bind_param($stmt, "ss", $image, $email);
+    mysqli_stmt_bind_param($stmt, "ss", $image, $userUid);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: desktop.html");
     exit();
 }
 function getPicture($conn) {
